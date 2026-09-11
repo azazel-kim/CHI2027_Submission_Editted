@@ -1,0 +1,28 @@
+% \section{CONCLUSION}
+% \label{sec:conclusion}
+
+% This paper asked whether concurrent think-aloud speech, scored by an evidence-gated multi-agent LLM pipeline, can stand in for self-reported presence. The answer is a qualified yes. On participants held out from pipeline selection, the speech-derived IPQ total converged with the survey, and within a participant it reliably told which of three VR games had felt more present, while sitting systematically lower in absolute level. Where the two measures part ways, the reason is now largely known: involvement items are scored from the absence of speech signals, and the evidence gate drops them at aggregation, so the gap lies in a scoring rule, not in what participants say or in how the rater judges it. Human coders agreed with the pipeline about as well as they agreed with each other. Thinking aloud did not measurably lower reported presence. The practical claim is narrow but useful: for the purpose the IPQ serves in comparative VR evaluation, telling which session felt more present to the same player, an evidence-gated speech score can fill that role alongside post-session self-report.
+
+
+% The LLM-derived scores showed meaningful correspondence with self-reported IPQ scores and captured relative differences in presence across VR experiences, particularly within the same participant, although systematic score offsets and uneven evidence coverage, especially for Involvement, currently limit their use as interchangeable absolute IPQ scores. 
+
+
+\section{CONCLUSION}
+\label{sec:conclusion}
+
+Creating a convincing sense of ``being there'' is central to the user experience of VR, making presence an important criterion for evaluating immersive systems and content. 
+This work introduced an evidence-gated LLM-based system for converting think-aloud utterances into IPQ-based presence scores and evaluated its use as a complementary presence measure.
+The LLM-derived scores showed meaningful correspondence with self-reported IPQ scores and captured relative differences in presence across VR experience.
+% , particularly within participants. 
+However, systematic score offsets and uneven coverage of subjective presence dimensions, especially the IPQ Involvement (INV) dimension, currently limit their use as interchangeable absolute IPQ scores.
+The locally fine-tuned routing classifier successfully directed presence-related utterances to the downstream multi-agent scoring chain, enabling unstructured think-aloud data to be organized into IPQ-related evidence for quantitative scoring. Moreover, concurrent think-aloud showed no clear evidence of reducing experienced presence or substantially increasing workload in the present study. 
+These findings support think-aloud-derived presence scores as a complementary measure for comparing VR experiences.
+Future work should validate the approach with larger independent samples, improve evidence coverage and score aggregation, incorporate complementary behavioral signals, and further examine the influence of TAP on the VR experience.
+
+
+% Future work should validate the approach with larger independent samples, improve evidence coverage and score aggregation, incorporate complementary behavioral signals, and further examine the influence of TAP using counterbalanced within-participant designs.
+
+
+% The locally fine-tuned routing classifier also provided sufficient coverage for the downstream multi-agent scoring process, supporting the feasibility of transforming unstructured think-aloud utterances into structured presence estimates. 
+% Moreover, concurrent think-aloud showed no clear evidence of reducing presence or substantially increasing workload in the present study. 
+% These findings support think-aloud--derived presence scores as a complementary approach for comparative VR evaluation, while future work should validate the method with larger independent samples, refine evidence and aggregation rules, incorporate complementary behavioral signals, and further examine TAP reactivity using stronger within-participant designs.

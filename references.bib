@@ -1,0 +1,971 @@
+
+% Journals
+
+% First the Full Name is given, then the abbreviation used in the AMS Math
+% Reviews, with an indication if it could not be found there.
+% Note the 2nd overwrites the 1st, so swap them if you want the full name.
+
+ %{AMS}
+ @String{AMSTrans = "American Mathematical Society Translations" }
+ @String{AMSTrans = "Amer. Math. Soc. Transl." }
+ @String{BullAMS = "Bulletin of the American Mathematical Society" }
+ @String{BullAMS = "Bull. Amer. Math. Soc." }
+ @String{ProcAMS = "Proceedings of the American Mathematical Society" }
+ @String{ProcAMS = "Proc. Amer. Math. Soc." }
+ @String{TransAMS = "Transactions of the American Mathematical Society" }
+ @String{TransAMS = "Trans. Amer. Math. Soc." }
+
+ %ACM
+ @String{CACM = "Communications of the {ACM}" }
+ @String{CACM = "Commun. {ACM}" }
+ @String{CompServ = "Comput. Surveys" }
+ @String{JACM = "J. ACM" }
+ @String{ACMMathSoft = "{ACM} Transactions on Mathematical Software" }
+ @String{ACMMathSoft = "{ACM} Trans. Math. Software" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newsletter" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newslett." }
+
+ @String{AmerSocio = "American Journal of Sociology" }
+ @String{AmerStatAssoc = "Journal of the American Statistical Association" }
+ @String{AmerStatAssoc = "J. Amer. Statist. Assoc." }
+ @String{ApplMathComp = "Applied Mathematics and Computation" }
+ @String{ApplMathComp = "Appl. Math. Comput." }
+ @String{AmerMathMonthly = "American Mathematical Monthly" }
+ @String{AmerMathMonthly = "Amer. Math. Monthly" }
+ @String{BIT = "{BIT}" }
+ @String{BritStatPsych = "British Journal of Mathematical and Statistical
+          Psychology" }
+ @String{BritStatPsych = "Brit. J. Math. Statist. Psych." }
+ @String{CanMathBull = "Canadian Mathematical Bulletin" }
+ @String{CanMathBull = "Canad. Math. Bull." }
+ @String{CompApplMath = "Journal of Computational and Applied Mathematics" }
+ @String{CompApplMath = "J. Comput. Appl. Math." }
+ @String{CompPhys = "Journal of Computational Physics" }
+ @String{CompPhys = "J. Comput. Phys." }
+ @String{CompStruct = "Computers and Structures" }
+ @String{CompStruct = "Comput. \& Structures" }
+ @String{CompJour = "The Computer Journal" }
+ @String{CompJour = "Comput. J." }
+ @String{CompSysSci = "Journal of Computer and System Sciences" }
+ @String{CompSysSci = "J. Comput. System Sci." }
+ @String{Computing = "Computing" }
+ @String{ContempMath = "Contemporary Mathematics" }
+ @String{ContempMath = "Contemp. Math." }
+ @String{Crelle = "Crelle's Journal" }
+ @String{GiornaleMath = "Giornale di Mathematiche" }
+ @String{GiornaleMath = "Giorn. Mat." } % didn't find in AMS MR., ibid.
+
+ %IEEE
+ @String{Computer = "{IEEE} Computer" }
+ @String{IEEETransComp = "{IEEE} Transactions on Computers" }
+ @String{IEEETransComp = "{IEEE} Trans. Comput." }
+ @String{IEEETransAC = "{IEEE} Transactions on Automatic Control" }
+ @String{IEEETransAC = "{IEEE} Trans. Automat. Control" }
+ @String{IEEESpec = "{IEEE} Spectrum" } % didn't find in AMS MR
+ @String{ProcIEEE = "Proceedings of the {IEEE}" }
+ @String{ProcIEEE = "Proc. {IEEE}" } % didn't find in AMS MR
+ @String{IEEETransAeroElec = "{IEEE} Transactions on Aerospace and Electronic
+     Systems" }
+ @String{IEEETransAeroElec = "{IEEE} Trans. Aerospace Electron. Systems" }
+
+ @String{IMANumerAna = "{IMA} Journal of Numerical Analysis" }
+ @String{IMANumerAna = "{IMA} J. Numer. Anal." }
+ @String{InfProcLet = "Information Processing Letters" }
+ @String{InfProcLet = "Inform. Process. Lett." }
+ @String{InstMathApp = "Journal of the Institute of Mathematics and
+     its Applications" }
+ @String{InstMathApp = "J. Inst. Math. Appl." }
+ @String{IntControl = "International Journal of Control" }
+ @String{IntControl = "Internat. J. Control" }
+ @String{IntNumerEng = "International Journal for Numerical Methods in
+     Engineering" }
+ @String{IntNumerEng = "Internat. J. Numer. Methods Engrg." }
+ @String{IntSuper = "International Journal of Supercomputing Applications" }
+ @String{IntSuper = "Internat. J. Supercomputing Applic." } % didn't find
+%% in AMS MR
+ @String{Kibernetika = "Kibernetika" }
+ @String{JResNatBurStand = "Journal of Research of the National Bureau
+     of Standards" }
+ @String{JResNatBurStand = "J. Res. Nat. Bur. Standards" }
+ @String{LinAlgApp = "Linear Algebra and its Applications" }
+ @String{LinAlgApp = "Linear Algebra Appl." }
+ @String{MathAnaAppl = "Journal of Mathematical Analysis and Applications" }
+ @String{MathAnaAppl = "J. Math. Anal. Appl." }
+ @String{MathAnnalen = "Mathematische Annalen" }
+ @String{MathAnnalen = "Math. Ann." }
+ @String{MathPhys = "Journal of Mathematical Physics" }
+ @String{MathPhys = "J. Math. Phys." }
+ @String{MathComp = "Mathematics of Computation" }
+ @String{MathComp = "Math. Comp." }
+ @String{MathScand = "Mathematica Scandinavica" }
+ @String{MathScand = "Math. Scand." }
+ @String{TablesAidsComp = "Mathematical Tables and Other Aids to Computation" }
+ @String{TablesAidsComp = "Math. Tables Aids Comput." }
+ @String{NumerMath = "Numerische Mathematik" }
+ @String{NumerMath = "Numer. Math." }
+ @String{PacificMath = "Pacific Journal of Mathematics" }
+ @String{PacificMath = "Pacific J. Math." }
+ @String{ParDistComp = "Journal of Parallel and Distributed Computing" }
+ @String{ParDistComp = "J. Parallel and Distrib. Comput." } % didn't find
+%% in AMS MR
+ @String{ParComputing = "Parallel Computing" }
+ @String{ParComputing = "Parallel Comput." }
+ @String{PhilMag = "Philosophical Magazine" }
+ @String{PhilMag = "Philos. Mag." }
+ @String{ProcNAS = "Proceedings of the National Academy of Sciences
+                    of the USA" }
+ @String{ProcNAS = "Proc. Nat. Acad. Sci. U. S. A." }
+ @String{Psychometrika = "Psychometrika" }
+ @String{QuartMath = "Quarterly Journal of Mathematics, Oxford, Series (2)" }
+ @String{QuartMath = "Quart. J. Math. Oxford Ser. (2)" }
+ @String{QuartApplMath = "Quarterly of Applied Mathematics" }
+ @String{QuartApplMath = "Quart. Appl. Math." }
+ @String{RevueInstStat = "Review of the International Statisical Institute" }
+ @String{RevueInstStat = "Rev. Inst. Internat. Statist." }
+
+ %SIAM
+ @String{JSIAM = "Journal of the Society for Industrial and Applied
+     Mathematics" }
+ @String{JSIAM = "J. Soc. Indust. Appl. Math." }
+ @String{JSIAMB = "Journal of the Society for Industrial and Applied
+     Mathematics, Series B, Numerical Analysis" }
+ @String{JSIAMB = "J. Soc. Indust. Appl. Math. Ser. B Numer. Anal." }
+ @String{SIAMAlgMeth = "{SIAM} Journal on Algebraic and Discrete Methods" }
+ @String{SIAMAlgMeth = "{SIAM} J. Algebraic Discrete Methods" }
+ @String{SIAMAppMath = "{SIAM} Journal on Applied Mathematics" }
+ @String{SIAMAppMath = "{SIAM} J. Appl. Math." }
+ @String{SIAMComp = "{SIAM} Journal on Computing" }
+ @String{SIAMComp = "{SIAM} J. Comput." }
+ @String{SIAMMatrix = "{SIAM} Journal on Matrix Analysis and Applications" }
+ @String{SIAMMatrix = "{SIAM} J. Matrix Anal. Appl." }
+ @String{SIAMNumAnal = "{SIAM} Journal on Numerical Analysis" }
+ @String{SIAMNumAnal = "{SIAM} J. Numer. Anal." }
+ @String{SIAMReview = "{SIAM} Review" }
+ @String{SIAMReview = "{SIAM} Rev." }
+ @String{SIAMSciStat = "{SIAM} Journal on Scientific and Statistical
+     Computing" }
+ @String{SIAMSciStat = "{SIAM} J. Sci. Statist. Comput." }
+
+ @String{SoftPracExp = "Software Practice and Experience" }
+ @String{SoftPracExp = "Software Prac. Experience" } % didn't find in AMS MR
+ @String{StatScience = "Statistical Science" }
+ @String{StatScience = "Statist. Sci." }
+ @String{Techno = "Technometrics" }
+ @String{USSRCompMathPhys = "{USSR} Computational Mathematics and Mathematical
+     Physics" }
+ @String{USSRCompMathPhys = "{U. S. S. R.} Comput. Math. and Math. Phys." }
+ @String{VLSICompSys = "Journal of {VLSI} and Computer Systems" }
+ @String{VLSICompSys = "J. {VLSI} Comput. Syst." }
+ @String{ZAngewMathMech = "Zeitschrift fur Angewandte Mathematik und
+     Mechanik" }
+ @String{ZAngewMathMech = "Z. Angew. Math. Mech." }
+ @String{ZAngewMathPhys = "Zeitschrift fur Angewandte Mathematik und Physik" }
+ @String{ZAngewMathPhys = "Z. Angew. Math. Phys." }
+
+% Publishers % ================================================= |
+
+ @String{Academic = "Academic Press" }
+ @String{ACMPress = "{ACM} Press" }
+ @String{AdamHilger = "Adam Hilger" }
+ @String{AddisonWesley = "Addison-Wesley" }
+ @String{AllynBacon = "Allyn and Bacon" }
+ @String{AMS = "American Mathematical Society" }
+ @String{Birkhauser = "Birkh{\"a}user" }
+ @String{CambridgePress = "Cambridge University Press" }
+ @String{Chelsea = "Chelsea" }
+ @String{ClaredonPress = "Claredon Press" }
+ @String{DoverPub = "Dover Publications" }
+ @String{Eyolles = "Eyolles" }
+ @String{HoltRinehartWinston = "Holt, Rinehart and Winston" }
+ @String{Interscience = "Interscience" }
+ @String{JohnsHopkinsPress = "The Johns Hopkins University Press" }
+ @String{JohnWileySons = "John Wiley and Sons" }
+ @String{Macmillan = "Macmillan" }
+ @String{MathWorks = "The Math Works Inc." }
+ @String{McGrawHill = "McGraw-Hill" }
+ @String{NatBurStd = "National Bureau of Standards" }
+ @String{NorthHolland = "North-Holland" }
+ @String{OxfordPress = "Oxford University Press" }  %address Oxford or London?
+ @String{PergamonPress = "Pergamon Press" }
+ @String{PlenumPress = "Plenum Press" }
+ @String{PrenticeHall = "Prentice-Hall" }
+ @String{SIAMPub = "{SIAM} Publications" }
+ @String{Springer = "Springer-Verlag" }
+ @String{TexasPress = "University of Texas Press" }
+ @String{VanNostrand = "Van Nostrand" }
+ @String{WHFreeman = "W. H. Freeman and Co." }
+
+%Entries
+
+@article{danry2025relive,
+  title={ReLive: Walking into Virtual Reality Spaces from Video Recordings of One's Past Can Increase the Experiential Detail and Affect of Autobiographical Memories},
+  author={Danry, Valdemar and Villa, Eli and Chan, Samantha and Maes, Pattie},
+  journal={IEEE Transactions on Visualization and Computer Graphics},
+  year={2025},
+  publisher={IEEE}
+}
+
+@article{el2020picture,
+  title={The picture of the past: Pictures to cue autobiographical memory in Alzheimer’s disease},
+  author={El Haj, Mohamad and Kapogiannis, Dimitrios and Antoine, Pascal},
+  journal={Journal of clinical and experimental neuropsychology},
+  volume={42},
+  number={9},
+  pages={914--923},
+  year={2020},
+  publisher={Taylor \& Francis}
+}
+
+@article{jungselius2023keeping,
+  title={Keeping memories alive: A decennial study of social media reminiscing, memories, and nostalgia},
+  author={Jungselius, Beata and Weilenmann, Alexandra},
+  journal={Social Media+ Society},
+  volume={9},
+  number={4},
+  pages={20563051231207850},
+  year={2023},
+  publisher={Sage Publications Sage UK: London, England}
+}
+
+@article{st2013modifying,
+  title={Modifying memory: Selectively enhancing and updating personal memories for a museum tour by reactivating them},
+  author={St. Jacques, Peggy L and Schacter, Daniel L},
+  journal={Psychological science},
+  volume={24},
+  number={4},
+  pages={537--543},
+  year={2013},
+  publisher={Sage Publications Sage CA: Los Angeles, CA}
+}
+
+@article{henkel2014point,
+  title={Point-and-shoot memories: The influence of taking photos on memory for a museum tour},
+  author={Henkel, Linda A},
+  journal={Psychological science},
+  volume={25},
+  number={2},
+  pages={396--402},
+  year={2014},
+  publisher={Sage Publications Sage CA: Los Angeles, CA}
+}
+
+@article{fawns2023cued,
+  title={Cued recall: Using photo-elicitation to examine the distributed processes of remembering with photographs},
+  author={Fawns, Tim},
+  journal={Memory Studies},
+  volume={16},
+  number={2},
+  pages={264--279},
+  year={2023},
+  publisher={Sage Publications Sage UK: London, England}
+}
+
+@article{fan2019concurrent,
+  title={Concurrent think-aloud verbalizations and usability problems},
+  author={Fan, Mingming and Lin, Jinglan and Chung, Christina and Truong, Khai N},
+  journal={ACM Transactions on Computer-Human Interaction (TOCHI)},
+  volume={26},
+  number={5},
+  pages={1--35},
+  year={2019},
+  publisher={ACM New York, NY, USA}
+}
+
+@inproceedings{zhang2022using,
+  title={Using the think aloud protocol in an immersive virtual reality evaluation of a virtual twin},
+  author={Zhang, Xuesong and Simeone, Adalberto L},
+  booktitle={Proceedings of the 2022 ACM symposium on spatial user interaction},
+  pages={1--8},
+  year={2022}
+}
+
+@article{fan2022older,
+  title={Older adults’ concurrent and retrospective think-aloud verbalizations for identifying user experience problems of VR games},
+  author={Fan, Mingming and Tibdewal, Vinita and Zhao, Qiwen and Cao, Lizhou and Peng, Chao and Shu, Runxuan and Shan, Yujia},
+  journal={Interacting with Computers},
+  volume={34},
+  number={4},
+  pages={99--115},
+  year={2022},
+  publisher={Oxford University Press}
+}
+
+@article{boren2000thinking,
+  title={Thinking aloud: Reconciling theory and practice},
+  author={Boren, Ted and Ramey, Judith},
+  journal={IEEE transactions on professional communication},
+  volume={43},
+  number={3},
+  pages={261--278},
+  year={2000},
+  publisher={IEEE}
+}
+
+@inproceedings{lombard2009measuring,
+  title={Measuring presence: the temple presence inventory},
+  author={Lombard, Matthew and Ditton, Theresa B and Weinstein, Lisa},
+  booktitle={Proceedings of the 12th annual international workshop on presence},
+  volume={15},
+  year={2009},
+  organization={University College London}
+}
+
+
+@article{lessiter2001cross,
+  title={A cross-media presence questionnaire: The ITC-Sense of Presence Inventory},
+  author={Lessiter, Jane and Freeman, Jonathan and Keogh, Edmund and Davidoff, Jules},
+  journal={Presence: Teleoperators \& Virtual Environments},
+  volume={10},
+  number={3},
+  pages={282--297},
+  year={2001},
+  publisher={MIT Press One Rogers Street, Cambridge, MA 02142-1209, USA journals-info~…}
+}
+
+@article{king2024having,
+  title={When having photographs of events influences the visual perspective of autobiographical memories},
+  author={King, Chloe I and Panjwani, Azra A and St. Jacques, Peggy L},
+  journal={Applied Cognitive Psychology},
+  volume={38},
+  number={1},
+  pages={e4150},
+  year={2024},
+  publisher={Wiley Online Library}
+}
+
+@article{st2024perspective,
+  title={Perspective matters: When visual perspective reshapes autobiographical memories.},
+  author={St Jacques, Peggy L},
+  journal={Journal of Applied Research in Memory and Cognition},
+  volume={13},
+  number={1},
+  pages={1},
+  year={2024},
+  publisher={Educational Publishing Foundation}
+}
+
+@article{schone2019experiences,
+  title={Experiences in virtual reality: A window to autobiographical memory},
+  author={Sch{\"o}ne, Benjamin and Wessels, Marlene and Gruber, Thomas},
+  journal={Current Psychology},
+  volume={38},
+  number={3},
+  pages={715--719},
+  year={2019},
+  publisher={Springer}
+}
+
+@article{kisker2021virtual,
+  title={Virtual reality experiences promote autobiographical retrieval mechanisms: Electrophysiological correlates of laboratory and virtual experiences},
+  author={Kisker, Joanna and Gruber, Thomas and Sch{\"o}ne, Benjamin},
+  journal={Psychological Research},
+  volume={85},
+  number={7},
+  pages={2485--2501},
+  year={2021},
+  publisher={Springer}
+}
+
+@article{kazlauskaite2023virtual,
+  title={Virtual reality as a technology of memory: Immersive presence in Polish politics of memory},
+  author={Kazlauskait{\.e}, R{\=u}ta},
+  journal={Memory, Mind \& Media},
+  volume={2},
+  pages={e7},
+  year={2023},
+  publisher={Cambridge University Press}
+}
+
+@article{li2025remverse,
+  title={Remverse: Supporting reminiscence activities for older adults through ai-assisted virtual reality},
+  author={Li, Ruohao and Li, Jiawei and Sun, Jia and Wu, Zhiqing and Li, Zisu and Wang, Ziyan and Lin, Ge and Fan, Mingming},
+  journal={Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies},
+  volume={9},
+  number={3},
+  pages={1--25},
+  year={2025},
+  publisher={ACM New York, NY, USA}
+}
+
+@article{intraub1989wide,
+  title={Wide-angle memories of close-up scenes.},
+  author={Intraub, Helene and Richardson, Michael},
+  journal={Journal of Experimental Psychology: Learning, Memory, and Cognition},
+  volume={15},
+  number={2},
+  pages={179},
+  year={1989},
+  publisher={American Psychological Association}
+}
+
+@article{tamir2018media,
+  title={Media usage diminishes memory for experiences},
+  author={Tamir, Diana I and Templeton, Emma M and Ward, Adrian F and Zaki, Jamil},
+  journal={Journal of Experimental Social Psychology},
+  volume={76},
+  pages={161--168},
+  year={2018},
+  publisher={Elsevier}
+}
+
+@article{conway2005memory,
+  title={Memory and the self},
+  author={Conway, Martin A},
+  journal={Journal of memory and language},
+  volume={53},
+  number={4},
+  pages={594--628},
+  year={2005},
+  publisher={Elsevier}
+}
+
+@article{conway2000construction,
+  title={The construction of autobiographical memories in the self-memory system.},
+  author={Conway, Martin A and Pleydell-Pearce, Christopher W},
+  journal={Psychological review},
+  volume={107},
+  number={2},
+  pages={261},
+  year={2000},
+  publisher={American Psychological Association}
+}
+
+@article{zacks2007event,
+  title={Event perception: a mind-brain perspective.},
+  author={Zacks, Jeffrey M and Speer, Nicole K and Swallow, Khena M and Braver, Todd S and Reynolds, Jeremy R},
+  journal={Psychological bulletin},
+  volume={133},
+  number={2},
+  pages={273},
+  year={2007},
+  publisher={American Psychological Association}
+}
+
+@article{kurby2008segmentation,
+  title={Segmentation in the perception and memory of events},
+  author={Kurby, Christopher A and Zacks, Jeffrey M},
+  journal={Trends in cognitive sciences},
+  volume={12},
+  number={2},
+  pages={72--79},
+  year={2008},
+  publisher={Elsevier}
+}
+
+@article{fawns2020blended,
+  title={Blended memory: A framework for understanding distributed autobiographical remembering with photography},
+  author={Fawns, Tim},
+  journal={Memory Studies},
+  volume={13},
+  number={6},
+  pages={901--916},
+  year={2020},
+  publisher={Sage Publications Sage UK: London, England}
+}
+
+@article{habermas2000getting,
+  title={Getting a life: the emergence of the life story in adolescence.},
+  author={Habermas, Tilmann and Bluck, Susan},
+  journal={Psychological bulletin},
+  volume={126},
+  number={5},
+  pages={748},
+  year={2000},
+  publisher={American Psychological Association}
+}
+
+% ============================================================
+% VR Presence & Immersion
+% ============================================================
+
+@article{jennett2008immersion,
+  title={Measuring and defining the experience of immersion in games},
+  author={Jennett, Charlene and Cox, Anna L. and Cairns, Paul and Dhoparee, Samira and Epps, Andrew and Tijs, Tim and Walton, Alison},
+  journal={International Journal of Human-Computer Studies},
+  volume={66},
+  number={9},
+  pages={641--661},
+  year={2008},
+  doi={10.1016/j.ijhcs.2008.04.004},
+  publisher={Elsevier}
+}
+
+@article{schubert2001experience,
+  title={The experience of presence: Factor analytic insights},
+  author={Schubert, Thomas and Friedmann, Frank and Regenbrecht, Holger},
+  journal={Presence: Teleoperators \& Virtual Environments},
+  volume={10},
+  number={3},
+  pages={266--281},
+  year={2001},
+  publisher={MIT Press}
+}
+
+@article{witmer1998measuring,
+  title={Measuring presence in virtual environments: A presence questionnaire},
+  author={Witmer, Bob G and Singer, Michael J},
+  journal={Presence: Teleoperators and Virtual Environments},
+  volume={7},
+  number={3},
+  pages={225--240},
+  year={1998},
+  publisher={MIT Press}
+}
+
+@article{slater2009place,
+  title={Place illusion and plausibility can lead to realistic behaviour in immersive virtual environments},
+  author={Slater, Mel},
+  journal={Philosophical Transactions of the Royal Society B: Biological Sciences},
+  volume={364},
+  number={1535},
+  pages={3549--3557},
+  year={2009},
+  publisher={The Royal Society}
+}
+
+@article{slater1997framework,
+  title={A framework for immersive virtual environments ({FIVE}): Speculations on the role of presence in virtual environments},
+  author={Slater, Mel and Wilbur, Sylvia},
+  journal={Presence: Teleoperators and Virtual Environments},
+  volume={6},
+  number={6},
+  pages={603--616},
+  year={1997},
+  publisher={MIT Press}
+}
+
+@article{tran2024ipq,
+  title   = {Classifying Presence Scores: Insights and Analysis from Two Decades of the Igroup Presence Questionnaire ({IPQ})},
+  author  = {Tran, Tanh Quang and Langlotz, Tobias and Young, Jacob and Schubert, Thomas W. and Regenbrecht, Holger},
+  journal = {{ACM} Transactions on Computer-Human Interaction},
+  volume  = {31},
+  number  = {5},
+  articleno = {61},
+  numpages = {26},
+  year    = {2024},
+  doi     = {10.1145/3689046}
+}
+
+% ============================================================
+% Think-Aloud Protocol
+% ============================================================
+
+@book{ericsson1993protocol,
+  title={Protocol Analysis: Verbal Reports as Data},
+  author={Ericsson, K. Anders and Simon, Herbert A.},
+  year={1993},
+  edition={revised},
+  publisher={MIT Press},
+  address={Cambridge, MA, USA}
+}
+
+@article{vandenhaaak2003concurrent,
+  title={Retrospective vs. concurrent think-aloud protocols: Testing the usability of an online library catalogue},
+  author={van den Haak, Maaike J and De Jong, Menno D T and Schellens, Peter Jan},
+  journal={Behaviour \& Information Technology},
+  volume={22},
+  number={5},
+  pages={339--351},
+  year={2003},
+  publisher={Taylor \& Francis}
+}
+
+@article{fox2011concurrent,
+  title={Do procedures for verbal reporting of thinking have to be reactive? {A} meta-analysis and recommendations for best reporting methods},
+  author={Fox, Mark C and Ericsson, K. Anders and Best, Ryan},
+  journal={Psychological Bulletin},
+  volume={137},
+  number={2},
+  pages={316--344},
+  year={2011},
+  publisher={American Psychological Association}
+}
+
+% ============================================================
+% LLM-Based Automated Text Classification
+% ============================================================
+
+@article{gilardi2023chatgpt,
+  title={{ChatGPT} outperforms crowd workers for text-annotation tasks},
+  author={Gilardi, Fabrizio and Alizadeh, Meysam and Kubl{\"i}, Ma{\"e}l},
+  journal={Proceedings of the National Academy of Sciences},
+  volume={120},
+  number={30},
+  pages={e2305016120},
+  year={2023},
+  publisher={National Academy of Sciences}
+}
+
+@article{ziems2024can,
+  title={Can Large Language Models Transform Computational Social Science?},
+  author={Ziems, Caleb and Held, William and Shaikh, Omar and Chen, Jiaao and Zhang, Zhehao and Yang, Diyi},
+  journal={Computational Linguistics},
+  volume={50},
+  number={1},
+  pages={237--291},
+  year={2024},
+  publisher={MIT Press}
+}
+
+% ============================================================
+% Multi-Agent LLM Systems
+% ============================================================
+
+@misc{wu2023autogen,
+  title={{AutoGen}: Enabling Next-Gen {LLM} Applications via Multi-Agent Conversation},
+  author={Wu, Qingyun and Bansal, Gagan and Zhang, Jieyu and Wu, Yiran and Li, Beibin and Zhu, Erkang and Jiang, Li and Zhang, Xiaoyun and Zhang, Shaokun and Liu, Jiale and Awadallah, Ahmed H and White, Ryen W and Burger, Doug and Wang, Chi},
+  howpublished={arXiv:2308.08155},
+  year={2023}
+}
+
+% ============================================================
+% Parameter-Efficient Fine-Tuning
+% ============================================================
+
+@inproceedings{hu2022lora,
+  title={{LoRA}: Low-Rank Adaptation of Large Language Models},
+  author={Hu, Edward J and Shen, Yelong and Wallis, Phillip and Allen-Zhu, Zeyuan and Li, Yuanzhi and Wang, Shean and Wang, Lu and Chen, Weizhu},
+  booktitle={International Conference on Learning Representations},
+  year={2022}
+}
+
+@inproceedings{dettmers2023qlora,
+  title={{QLoRA}: Efficient Finetuning of Quantized {LLM}s},
+  author={Dettmers, Tim and Pagnoni, Artidoro and Holtzman, Ari and Zettlemoyer, Luke},
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={36},
+  year={2023}
+}
+% ============================================================
+% Similar work — LLM analysis of think-aloud in VR / language-based presence / multi-agent scoring (added 2026-09-06, MVc)
+% ============================================================
+
+@misc{murat2025llmthinkalouds,
+  title   = {{LLM-Think-Alouds}: Multimodal Player Experience Analysis for {VR} Playtesting},
+  author  = {Murat, Erdem and Zhang, Yongqi and Yu, Liuchuan and Sabah, Siraj and Yu, Lap-Fai},
+  howpublished = {Unpublished manuscript in IEEE TVCG submission format (copy stored in AI\_Draft/)},
+  year    = {2025},
+  note    = {Venue and publication date not assigned in the copy consulted}
+}
+
+@article{deveaux2024pronouns,
+  title   = {Presence and Pronouns: An Exploratory Investigation into the Language of Social {VR}},
+  author  = {DeVeaux, Cyan and Markowitz, David M. and Han, Eugy and Miller, Mark Roman and Hancock, Jeffrey T. and Bailenson, Jeremy N.},
+  journal = {Journal of Language and Social Psychology},
+  volume  = {43},
+  number  = {4},
+  pages   = {405--427},
+  year    = {2024},
+  doi     = {10.1177/0261927X241248646}
+}
+
+@inproceedings{kramer2006linguistic,
+  title     = {Using Linguistic Features to Measure Presence in Computer-Mediated Communication},
+  author    = {Kramer, Adam D. I. and Oh, Lui Min and Fussell, Susan R.},
+  booktitle = {Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI '06)},
+  address   = {Montr\'eal, Qu\'ebec, Canada},
+  publisher = {ACM},
+  year      = {2006},
+  note      = {Page range and DOI not present in the author copy consulted}
+}
+
+@article{harnessing2024writing,
+  title   = {Harnessing {LLM}s for multi-dimensional writing assessment: Reliability and alignment with human judgments},
+  author  = {Tang, Xiaoyi and Chen, Hongwei and Lin, Daoyu and Li, Kexin},
+  journal = {Heliyon},
+  volume  = {10},
+  pages   = {e34262},
+  year    = {2024},
+  doi     = {10.1016/j.heliyon.2024.e34262}
+}
+
+@misc{jain2025multillm,
+  title  = {Multi-{LLM} Thematic Analysis with Dual Reliability Metrics: Combining Cohen's Kappa and Semantic Similarity for Qualitative Research Validation},
+  author = {Jain, Nilesh and Suh, Hyungil and Adeyinka, Seyi and Roseman, Leor and Allsop, Aza},
+  howpublished = {arXiv preprint arXiv:2512.20352},
+  year   = {2025},
+  note   = {Version 2 dated 14 February 2026}
+}
+
+@misc{eberhardt2025llmscale,
+  title  = {Development and Validation of Large Language Model Rating Scales for Automatically Transcribed Psychological Therapy Sessions},
+  author = {Eberhardt, Steffen T. and Vehlen, Antonia and Schaffrath, Jana and Schwartz, Brian and Baur, Tobias and Schiller, Dominik and Hallmen, Tobias and Andr\'e, Elisabeth and Lutz, Wolfgang},
+  howpublished = {Unpublished manuscript, version 0.98},
+  year   = {2025},
+  note   = {No venue or DOI in the copy consulted}
+}
+
+
+@article{lakens2017equivalence,
+  author  = {Lakens, Dani{\"e}l},
+  title   = {Equivalence Tests: A Practical Primer for t Tests, Correlations, and Meta-Analyses},
+  journal = {Social Psychological and Personality Science},
+  volume  = {8},
+  number  = {4},
+  pages   = {355--362},
+  year    = {2017},
+  doi     = {10.1177/1948550617697177}
+}
+
+@article{lakens2018tutorial,
+  author  = {Lakens, Dani{\"e}l and Scheel, Anne M. and Isager, Peder M.},
+  title   = {Equivalence Testing for Psychological Research: A Tutorial},
+  journal = {Advances in Methods and Practices in Psychological Science},
+  volume  = {1},
+  number  = {2},
+  pages   = {259--269},
+  year    = {2018},
+  doi     = {10.1177/2515245918770963}
+}
+
+@inproceedings{schwind2019presence,
+  author    = {Schwind, Valentin and Knierim, Pascal and Haas, Nico and Henze, Niels},
+  title     = {Using Presence Questionnaires in Virtual Reality},
+  booktitle = {Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems (CHI '19)},
+  year      = {2019},
+  publisher = {ACM},
+  pages     = {1--12},
+  doi       = {10.1145/3290605.3300590}
+}
+
+@inproceedings{lee2012equivalence,
+  author    = {Lee, Cha and Gauglitz, Steffen and H{\"o}llerer, Tobias and Bowman, Doug A.},
+  title     = {Examining the Equivalence of Simulated and Real {AR} on a Visual Following and Identification Task},
+  booktitle = {Proceedings of IEEE Virtual Reality 2012},
+  year      = {2012},
+  publisher = {IEEE}
+}
+
+@inproceedings{sanaei2024scene,
+  author    = {Sanaei, Mohammadamin and Gilbert, Stephen B. and Javadpour, Nikoo and Sabouni, Hila and Dorneich, Michael C. and Kelly, Jonathan W.},
+  title     = {The Correlations of Scene Complexity, Workload, Presence, and Cybersickness in a Task-Based {VR} Game},
+  booktitle = {Virtual, Augmented and Mixed Reality (HCI International 2024), LNCS 14706},
+  year      = {2024},
+  publisher = {Springer},
+  doi       = {10.1007/978-3-031-61041-7{\_}18}
+}
+
+@article{johnsdorf2025memory,
+  author  = {Johnsdorf, Marike and Kisker, Joanna and Sagehorn, Merle and Gruber, Thomas and Sch\"one, Benjamin},
+  title   = {Memory performance as a function of modality and context: revealing the cognitive mechanisms underlying enhanced memory in virtual reality},
+  journal = {Virtual Reality},
+  volume  = {29},
+  number  = {3},
+  pages   = {128},
+  year    = {2025},
+  doi     = {10.1007/s10055-025-01205-1}
+}
+
+@article{bland1986statistical,
+  author  = {Bland, J. Martin and Altman, Douglas G.},
+  title   = {Statistical methods for assessing agreement between two methods of clinical measurement},
+  journal = {The Lancet},
+  volume  = {327},
+  number  = {8476},
+  pages   = {307--310},
+  year    = {1986},
+  doi     = {10.1016/S0140-6736(86)90837-8}
+}
+
+@article{lin1989concordance,
+  author  = {Lin, Lawrence I-Kuei},
+  title   = {A Concordance Correlation Coefficient to Evaluate Reproducibility},
+  journal = {Biometrics},
+  volume  = {45},
+  number  = {1},
+  pages   = {255--268},
+  year    = {1989},
+  doi     = {10.2307/2532051}
+}
+
+@article{chi1997quantifying,
+  author  = {Chi, Michelene T. H.},
+  title   = {Quantifying Qualitative Analyses of Verbal Data: A Practical Guide},
+  journal = {The Journal of the Learning Sciences},
+  volume  = {6},
+  number  = {3},
+  pages   = {271--315},
+  year    = {1997},
+  doi     = {10.1207/s15327809jls0603{\_}1}
+}
+
+@article{bailey2008transcribing,
+  author  = {Bailey, Julia},
+  title   = {First steps in qualitative data analysis: transcribing},
+  journal = {Family Practice},
+  volume  = {25},
+  number  = {2},
+  pages   = {127--131},
+  year    = {2008},
+  doi     = {10.1093/fampra/cmn003}
+}
+
+@misc{chew2023llm,
+  author = {Chew, Robert and Bollenbacher, John and Wenger, Michael and Speer, Jessica and Kim, Annice},
+  title  = {{LLM}-Assisted Content Analysis: Using Large Language Models to Support Deductive Coding},
+  year   = {2023},
+  howpublished = {arXiv preprint arXiv:2306.14924},
+  doi    = {10.48550/arXiv.2306.14924}
+}
+
+
+@article{regal2019questionnaires,
+  author  = {Regal, Georg and Voigt-Antons, Jan-Niklas and Schmidt, Steven and Schrammel, Johann and Kojic, Tanja and Tscheligi, Manfred and M{\"o}ller, Sebastian},
+  title   = {Questionnaires embedded in virtual environments: reliability and positioning of rating scales in virtual environments},
+  journal = {Quality and User Experience},
+  volume  = {4},
+  pages   = {5},
+  year    = {2019},
+  doi     = {10.1007/s41233-019-0029-1}
+}
+
+@article{cummings2016immersive,
+  author  = {Cummings, James J. and Bailenson, Jeremy N.},
+  title   = {How Immersive Is Enough? A Meta-Analysis of the Effect of Immersive Technology on User Presence},
+  journal = {Media Psychology},
+  volume  = {19},
+  number  = {2},
+  pages   = {272--309},
+  year    = {2016},
+  doi     = {10.1080/15213269.2015.1015740}
+}
+
+@article{usoh2000reality,
+  author  = {Usoh, Martin and Catena, Ernest and Arman, Sima and Slater, Mel},
+  title   = {Using Presence Questionnaires in Reality},
+  journal = {Presence: Teleoperators and Virtual Environments},
+  volume  = {9},
+  number  = {5},
+  pages   = {497--503},
+  year    = {2000},
+  doi     = {10.1162/105474600566989}
+}
+
+@incollection{hart1988development,
+  title={Development of {NASA-TLX} ({Task Load Index}): Results of empirical and theoretical research},
+  author={Hart, Sandra G and Staveland, Lowell E},
+  booktitle={Human Mental Workload},
+  editor={Hancock, Peter A and Meshkati, Najmedin},
+  series={Advances in Psychology},
+  volume={52},
+  pages={139--183},
+  year={1988},
+  publisher={North-Holland},
+  doi={10.1016/S0166-4115(08)62386-9}
+}
+
+@inproceedings{hart2006nasa,
+  title={{NASA-Task Load Index} ({NASA-TLX}); 20 years later},
+  author={Hart, Sandra G},
+  booktitle={Proceedings of the Human Factors and Ergonomics Society Annual Meeting},
+  volume={50},
+  number={9},
+  pages={904--908},
+  year={2006},
+  doi={10.1177/154193120605000909}
+}
+
+@article{kim2018vrsq,
+  title={Virtual reality sickness questionnaire ({VRSQ}): Motion sickness measurement index in a virtual reality environment},
+  author={Kim, Hyun K and Park, Jaehyun and Choi, Yeongcheol and Choe, Mungyeong},
+  journal={Applied Ergonomics},
+  volume={69},
+  pages={66--73},
+  year={2018},
+  doi={10.1016/j.apergo.2017.12.016}
+}
+
+@article{williamson2012framework,
+  title={A framework for evaluation and use of automated scoring},
+  author={Williamson, David M and Xi, Xiaoming and Breyer, F Jay},
+  journal={Educational Measurement: Issues and Practice},
+  volume={31},
+  number={1},
+  pages={2--13},
+  year={2012},
+  doi={10.1111/j.1745-3992.2011.00223.x}
+}
+
+@article{slater1994depth,
+  title={Depth of Presence in Virtual Environments},
+  author={Slater, Mel and Usoh, Martin and Steed, Anthony},
+  journal={Presence: Teleoperators and Virtual Environments},
+  volume={3},
+  number={2},
+  pages={130--144},
+  year={1994},
+  publisher={MIT Press},
+  doi={10.1162/pres.1994.3.2.130}
+}
+@article{slater1993representation,
+  title={Representations Systems, Perceptual Position, and Presence in Immersive Virtual Environments},
+  author={Slater, Mel and Usoh, Martin},
+  journal={Presence: Teleoperators and Virtual Environments},
+  volume={2},
+  number={3},
+  pages={221--233},
+  year={1993},
+  publisher={MIT Press},
+  doi={10.1162/pres.1993.2.3.221}
+}
+
+@inproceedings{zhang2022thinkaloud,
+  title={Using the Think Aloud Protocol in an Immersive Virtual Reality Evaluation of a Virtual Twin},
+  author={Zhang, Xuesong and Simeone, Adalberto L.},
+  booktitle={Proceedings of the 2022 ACM Symposium on Spatial User Interaction (SUI '22)},
+  pages={1--8},
+  year={2022},
+  publisher={ACM},
+  doi={10.1145/3565970.3567706}
+}
+
+@incollection{zhang2023thinkaloud,
+  title={Using Think-Aloud Protocol in Immersive {VR} Evaluations},
+  author={Zhang, Xuesong and Simeone, Adalberto L.},
+  booktitle={Everyday Virtual and Augmented Reality},
+  series={Human--Computer Interaction Series},
+  pages={197--226},
+  year={2023},
+  publisher={Springer},
+  doi={10.1007/978-3-031-05804-2_8}
+}
+
+@article{sergiou2024vrrta,
+  title={Virtual reality-based retrospective think aloud ({VR-RTA}): a novel method for studying offender decision-making},
+  author={Sergiou, Carmen-Silva and Gerstner, Dominik and Nee, Claire and Elffers, Henk and van Gelder, Jean-Louis},
+  journal={Crime Science},
+  volume={13},
+  number={39},
+  year={2024},
+  doi={10.1186/s40163-024-00236-4}
+}
+
+@inproceedings{kim2026situ,
+  title={In-Situ Progressive Evaluation of VR Immersion: A Comparison Between Voice and Controller-Based Questionnaires Validated with EEG},
+  author={Kim, Jae Hoon and Kim, Hanseob and Kim, Gerard Jounghyun},
+  booktitle={2026 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)},
+  pages={1157--1158},
+  year={2026},
+  organization={IEEE}
+}
+
+@misc{lgai2024exaone,
+  title         = {{EXAONE} 3.5: Series of Large Language Models for Real-world Use Cases},
+  author        = {{LG AI Research}},
+  year          = {2024},
+  month         = dec,
+  eprint        = {2412.04862},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2412.04862}
+}
+
+@article{golding1998mssq,
+  title={Motion sickness susceptibility questionnaire revised and its relationship to other forms of sickness},
+  author={Golding, John F.},
+  journal={Brain Research Bulletin},
+  volume={47},
+  number={5},
+  pages={507--516},
+  year={1998},
+  doi={10.1016/S0361-9230(98)00091-4}
+}

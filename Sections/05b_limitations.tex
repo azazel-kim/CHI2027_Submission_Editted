@@ -1,0 +1,34 @@
+\section{LIMITATIONS AND FUTURE WORK}
+\label{sec:limitations}
+
+Several limitations should be considered when interpreting the present findings.
+First, the TAP analyses were based on 16 participants across 48 sessions, with an even smaller held-out confirmation sample. Although the results showed promising correspondence between LLM-derived and self-reported IPQ scores, larger and fully independent samples are needed to establish the generalizability of the proposed approach across participants and VR content.
+
+In addition, verbal evidence was uneven across IPQ items, particularly for Involvement (INV). Because the current system calculates scores only from items supported by sufficient think-aloud evidence, the resulting scores are not always based on all 14 IPQ items. Future work will refine the evidence and aggregation rules and investigate complementary multimodal signals, such as gaze, head and hand movements, and gameplay events, to improve item coverage without requiring additional verbalization.
+
+Another limitation is that the multi-agent scoring chain currently relies on commercial LLM APIs, which introduces concerns regarding privacy, reproducibility, and scalability. Future work will therefore explore locally deployable or open-weight models for the Drafter, Reviewer, and Rater roles.
+
+The current findings also primarily support relative comparisons across VR experiences rather than absolute presence estimation. The observed score offset and exploratory equivalence margin limit direct interchangeability with conventional IPQ scores. Future studies should validate predefined equivalence bounds and further calibrate LLM-derived scores using larger independent datasets.
+
+Finally, the influence of TAP itself remains inconclusive because the TAP and non-TAP comparison was between participants and involved a relatively small sample. Future work should use larger samples and counterbalanced within-participant designs, with equivalent VR familiarization across conditions, to more clearly isolate the effect of concurrent verbalization on presence and workload.
+
+% Several limitations qualify the scope of the current findings.
+% First, the sample size for the speech-derived analyses is $16$ participants ($48$ sessions), which is adequate for the within-person direction indicators reported here (permutation $p<.005$ on top-1 and on pairwise direction) but leaves the complete-rank indicator underpowered ($31\%$ vs.\ $17\%$, $p=.11$) and yields wide confidence intervals on the participant-level correlations. The held-out confirmation sample is smaller still (nine participants, $27$ sessions); its correlation is significant but imprecisely estimated (clustered $95\%$ CI $[+.26, +.85]$), and the pipeline was developed on the same population, so replication on an independent sample remains necessary. A larger TAP sample would tighten these estimates and also allow subgroup analyses that the current data do not support.
+
+% Third, the multi-agent scoring chain uses commercial LLM API models as the drafter, reviewer, and rater. This limits data privacy, ties reproducibility to versioned commercial models, and makes cost a scaling constraint for larger studies.
+
+% Fourth, INV items are the least covered by speech in this sample, and the within-participant INV correlation is null. The human-coder comparison attributes much of this gap to the aggregation rule for absence-scored items, not to silence (Section~\ref{sec:discussion}), so INV coverage should improve if that rule is relaxed, but the comparison rests on 12 sessions and two coders.
+
+% Fifth, speech-derived totals sit below survey totals by about a quarter of a point on the $0$--$6$ scale, and the INV-side calibration term is a first pass that removes the level offset on INV but does not correct the absolute-value gap in general. The pipeline currently compares sessions within a participant; it does not yet produce absolute presence scores against an external reference.
+
+% Sixth, the RQ3 group comparison is between participants and, at $n=16$ per group, is not powered to detect small effects; the uniform elevation of the TAP group on non-presence measures (workload, cybersickness) means that a general response-intensity difference cannot be separated from a presence-specific effect with the current design.
+
+% Finally, the equivalence margin was derived by us: no published margin exists for presence questionnaires, and prior VR equivalence studies likewise set their own bounds~\cite{lee2012equivalence,sanaei2024scene}. Our margin is anchored to the questionnaire's measurement error, and equivalence held under every rule that uses the full-sample $SD$, but it was specified after the data were collected, so the equivalence analysis is exploratory. Equivalence was also established for group-level means only: the limits of agreement and the concordance correlation show that the two measures are not interchangeable for an individual participant.
+
+
+
+% Three directions follow directly from the limitations above. First, the INV gap has been traced to the aggregation rule for absence-scored items (Section~\ref{sec:discussion}); the next step is to revise that rule and re-score the existing sessions, and only then to decide whether new content or new operationalizations of INV1 and INV3 are needed.
+
+% Second, augmenting speech with a stream that participants do not have to verbalize, for example, gameplay events, head- and hand-pose signals, or gaze, would allow the scoring chain to route around the INV gap and provide a converging channel for the total score. This addresses the coverage limitation without asking participants to say more.
+
+% Third, a within-participant design in which the same participant plays with and without the think-aloud instruction on the same VR content, and a scaled-up between-participants sample, would tighten the RQ3 conclusion beyond the current preliminary null.

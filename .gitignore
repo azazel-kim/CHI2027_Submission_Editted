@@ -1,0 +1,45 @@
+# CHI2027_Submission (Overleaf 클론) .gitignore — 2026-09-11 MVc 최초 생성
+# 목적: 실수 add · commit · push 로 아래 카테고리가 Overleaf 에 반입되지 않도록 차단.
+#       기존에 이미 tracked 인 파일 (예: Figures/.DS_Store) 은 영향 없음 —
+#       그것들은 별건으로 정리해야 함.
+
+# ── 시스템 자동 생성 파일 ──────────────────────
+.DS_Store
+
+# ── LaTeX 로컬 컴파일 산출물 ──────────────────
+# Overleaf 서버 컴파일을 정본으로 삼음. 로컬 산출물은 반입 무의미.
+main.log
+main.pdf
+main.aux
+main.bbl
+main.blg
+main.fls
+main.fdb_latexmk
+main.synctex.gz
+main.out
+main.toc
+
+# ── 편집 원본 (그림 소스 · 발표 파일) ────────
+# Overleaf 에는 렌더된 png 만 두고 원본은 로컬 보관.
+*.psd
+*.ai
+*.pptx
+
+# ── 임시 파일 ──────────────────────────────
+~*.tmp
+Figures/~*.tmp
+
+# ── 개인 작업 폴더 (에이전트 스니펫 · 충돌 백업) ─
+_mcd_snippets_*/
+.conflict_backup_*/
+
+# ── 제3자 참조 PDF (저작권 · 리뷰본 익명성) ─────
+/Workflow.pdf
+/CHI2027_draft_review_*.pdf
+/LLM-Think-Alouds_*.pdf
+/Twelve tips for applying*.pdf
+
+# ── 참가자 원본 얼굴 스크린샷 (IRB 절대 반입 금지) ─
+# 콤포지트 (F12_viewer_PT_vs_PC.png) 는 저해상도로 이미 tracked
+Figures/PT[0-9][0-9][0-9]-[A-C].png
+Figures/PC[0-9][0-9][0-9]-[A-C].png

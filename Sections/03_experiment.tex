@@ -1,0 +1,191 @@
+\section{EXPERIMENT}
+\label{sec:exp}
+
+\subsection{Experimental Design}
+\label{subsec:design}
+
+% The study used a \redout{mixed design.}
+% \hsnote{The study design followed between-subject study.}
+% The protocol was manipulated between participants: the ``TAP'' group thought aloud while playing, whereas the ``non-TAP'' group (as Control) played the same content without a think-aloud process and then completed the same questionnaires. 
+% The game was varied within participants: each of the 32 participants (16 per group) played all three titles, yielding 96 sessions.
+
+
+\hsnote{The study employed a 1 $\times$ 2 between-subjects design with two protocol conditions: TAP and non-TAP (Control). Participants in the TAP group verbalized their ongoing thoughts while playing and completed the post-experience questionnaires after each VR session. Participants in the non-TAP (Control) group experienced the same VR content without concurrent verbalization and completed the same questionnaires after each session. Each participant experienced all three VR games, with the presentation order counterbalanced across participants to minimize potential order effects.}
+
+
+
+% Presentation order followed a $3\times3$ Latin square (A--B--C, B--C--A, C--A--B). Orders were not concentrated in either group ($\chi^2$ $p=.913$; TAP 5/6/5, control 6/5/5), and each title occupied each serial position 10--11 times.
+
+
+
+
+
+
+\subsection{Experimental Materials}
+\label{subsec:material}
+
+\subsubsection{VR Games as Stimuli}
+
+
+Three commercial VR titles were used: (1) \textit{Half-Life: Alyx}\footnote{Steam: \url{https://store.steampowered.com/app/546560/HalfLife_Alyx/}}, (2) \textit{Subside}\footnote{Steam: \url{https://store.steampowered.com/app/2550040/Subside/}}, and (3) \textit{The Lab}\footnote{Steam: \url{https://store.steampowered.com/app/450390/The_Lab/}}.
+\textit{Alyx} and \textit{Subside} were selected to provide highly immersive VR experiences with relatively realistic visual environments, while differing in their interaction and task demands. 
+\textit{Alyx} required active, goal-directed interaction, including learning and applying VR-specific mechanics such as the gravity gloves to manipulate objects and progress through the environment. 
+In contrast, the selected \textit{Subside} experience primarily involved free underwater exploration with minimal explicit task demands, allowing participants to focus more on observing and navigating the environment. 
+\textit{The Lab}'s \textit{Longbow} provided a further contrast as a more stylized and task-oriented experience, in which participants defended a castle by shooting arrows at enemies approaching from multiple directions. 
+These VR contents provided variation in visual realism as well as the level and type of interaction required from the participant.
+
+
+
+For the TAP practice session, participants experienced \textit{The Lab}'s \textit{Vesper Peak}, a low-demand scene in which they could explore a mountaintop environment and interact with a robot dog by throwing a stick. Its relatively simple interaction was intended to allow participants to focus on practicing the think-aloud procedure before the experiment.
+
+% The practice content for VR setup with think-aloud procedure employed \textit{The Lab}'s Vesper Peak scene, in which the player walks around a mountaintop and throws a stick to a robot dog; the scene demands little of the player, so participants could concentrate and practice on the think-aloud procedure.
+
+\subsubsection{{Apparatus and Physical Setup}}
+
+Experimental sessions ran on a Windows PC (AMD Ryzen 7 7700X, 128\,GB RAM, NVIDIA GeForce RTX 4080) with SteamVR as the active OpenXR runtime. The headset was a Samsung Galaxy XR ($3{,}552 \times 3{,}840$ pixels per eye, $109^{\circ}$ field of view, up to 90\,Hz), streamed from the PC over Wi-Fi through Virtual Desktop; its microphone was the speech input.
+Given that immersive system characteristics can support the formation of presence, this high-performance VR setup was selected to provide a high-fidelity and immersive baseline.
+
+The experiment took place in a university laboratory with only the participant and the researcher present. Participants sat in front of a webcam (Figure~\ref{fig:console}~\textcircled{\scriptsize 1}) while playing; the researcher operated the console from an adjacent desk and monitored the procedure and data collection throughout each session.
+
+
+\subsubsection{Experimental Console}
+
+\hsnote{The experimental console was developed using the Unity 3D game engine to manage experimental sessions and synchronize data collection (Figure~\ref{fig:console}~\textcircled{\scriptsize 2}). At the start of each session, the assigned VR game was launched simultaneously with recordings of the participant's headset view and webcam, as well as real-time speech transcription. All data streams were stored in a session-specific folder using a common timestamp referenced to the session start, enabling temporal alignment across modalities.
+During the session, the transcription interface (Figure~\ref{fig:console}~\textcircled{\scriptsize 4}) displayed each recognized utterance together with the category assigned by the front-end classifier, while the console provided session-level monitoring information. After the session, the analysis interface (Figure~\ref{fig:interface}) allowed the recorded utterances to be replayed alongside the participant's corresponding in-game behavior for synchronized review. The collected session data were then passed to the post-session scoring pipeline.}
+
+% A purpose-built Unity application served as the operator console (Figure~\ref{fig:console}~\textcircled{\scriptsize 2}). Starting a session launched the assigned title and, at the same moment, recording of the participant's headset view and webcam and real-time speech transcription, all written to one per-participant, per-game folder on a common time base (milliseconds from session start). The analysis interface (Figure~\ref{fig:interface}) could therefore replay what a participant said alongside what they were doing at that moment. During a session a transcription window (Figure~\ref{fig:console}~\textcircled{\scriptsize 4}) listed each recognized utterance with the category the front-end classifier assigned; from it the operator checked the accumulated cost and released the session to the offline scoring workflow.
+
+
+\subsubsection{Speech Processing Pipeline}
+
+% For the TAP group, each transcribed utterance was routed by the front-end classifier and scored offline by the multi-agent chain described in Section~\ref{sec:system}; items without evidence were left missing. A coverage indicator (Figure~\ref{fig:console}~\textcircled{\scriptsize 3} Coverage indicator (practice session only): four boxes naming the IPQ constructs with example expressions. 
+
+
+For the TAP group, each transcribed utterance was routed by the on-device front-end classifier and, after the session, scored by the multi-agent chain described in Section~\ref{sec:system}, whose drafter, reviewer, and rater are API-hosted large language models; only the front end runs on the local machine.
+The classifier mapped each utterance to the relevant IPQ dimension, after which the scoring stage determined whether sufficient evidence was available to assign an IPQ item score. Items for which no supporting evidence was identified were retained as missing values rather than imputed. During the practice session only, a coverage indicator (Figure~\ref{fig:console}~\textcircled{\scriptsize 3}) displayed the four IPQ dimensions together with representative expressions to support familiarization with the think-aloud procedure.
+
+
+For the non-TAP group, transcription, classification, and utterance-based scoring were not run, as these participants received no think-aloud instruction.
+
+% For the control group the classifier was disabled, no practice session was run, and no scoring was performed, since no speech was collected by design.
+
+% \subsubsection{Physical Setup}
+
+% Sessions took place in a university laboratory with only the researcher present. The participant sat in a chair in front of the webcam (Figure~\ref{fig:console}~\textcircled{\scriptsize 1}) and played freely, and the researcher operated the console from a desk beside the play area.
+
+
+
+
+
+
+% , administered after every session on its 0--6 scale. The IPQ was chosen over longer instruments because the speech-derived measure needs item-specific evidence for every item, so the item count sets the number of targets the speech must cover.
+
+
+% , as well as the overall presence score.
+
+
+% Because concurrent verbalization, i.e., TAP, could add to the demands of playing, workload was measured after each session with the raw NASA Task Load Index (TLX)~\cite{hart1988development,hart2006nasa}, so that any difference in presence between the groups could be read against the load the protocol itself imposed. 
+% The six items were averaged with equal weights, since the administered form had no pairwise-comparison items; the form used a 0--10 scale, and scores are reported on the conventional 0--100 metric (form value $\times 10$). The performance item was oriented in the standard direction and was not reversed. 
+
+
+% \subsubsection{Subjective Measures}
+\subsection{Subjective Measures}
+\label{subsec:measures}
+
+To address the research questions and hypotheses, subjective measures were selected to evaluate both the validity of the proposed presence measurement approach and the potential influence of the TAP itself. Presence was therefore assessed as the primary outcome, while workload was additionally measured to examine whether concurrent verbalization imposed extra task demands.
+
+
+Presence was measured with the 14-item Igroup Presence Questionnaire (IPQ)~\cite{schubert2001experience}.
+The IPQ was administered after each VR session using a 0--6 scale and assessed General Presence (GP), Spatial Presence (SP), Involvement (INV), and Experienced Realism (REAL).
+An overall presence score was calculated as the mean of all 14 items after reverse-scoring SP2, INV3, and REAL1.
+
+
+
+Because concurrent verbalization, i.e., TAP, could add to the demands of playing, workload was measured after each session using the NASA Task Load Index (NASA-TLX)~\cite{hart1988development,hart2006nasa}, allowing any differences in presence between the groups to be considered alongside the workload introduced by the protocol itself. The six dimensions—Mental Demand, Physical Demand, Temporal Demand, Performance, Effort, and Frustration—were assessed separately using an 11-point scale from 0 to 10 and analyzed individually.
+For reporting, each dimension was converted to the conventional 0--100 scale by multiplying the recorded value by 10. 
+% The Performance dimension followed the standard response direction and was not reverse-scored.
+
+
+% \redout{Cybersickness was measured with the Virtual Reality Sickness Questionnaire (VRSQ)~\cite{kim2018vrsq}: nine items rated 0--3 in an oculomotor and a disorientation factor, each expressed as a percentage of its maximum and averaged without weights.}
+
+
+% \subsubsection{Objective Measures}
+
+% For the TAP group, each session yielded the think-aloud utterance stream, the category assigned to each utterance by the front-end classifier, the number of IPQ items with construct evidence, and the speech-derived IPQ scores at item, subscale, and total level.
+
+\subsection{Experimental Procedures}
+\label{subsec:procedure}
+
+% Participants first completed a short online screening survey (safety items, motion-sickness susceptibility, prior VR experience); anyone who answered yes to a safety item was not enrolled. 
+% Eligible respondents were placed in a stratum and assigned to whichever group had fewer participants in it, with one of the three presentation orders, and then scheduled.
+
+
+% On the day of the experiment, participants provided informed consent before beginning the study.
+% Participants in the TAP group first completed a practice session to become familiar with the VR setup and the think-aloud procedure. During this practice session, the coverage indicator (Figure~\ref{fig:console}~\textcircled{\scriptsize 3}) 
+% was displayed to support familiarization with verbalizing their ongoing experiences, but it was not shown during the experimental sessions. 
+% \note{Participants in the non-TAP (Control) group proceeded directly to the experimental sessions.}
+
+\hsnote{Participants first completed a short online screening survey assessing safety-related eligibility, motion-sickness susceptibility, and prior VR experience. Respondents who met the eligibility criteria were invited to participate in the experiment.}
+\hsnote{On the day of the experiment, participants provided informed consent before beginning the study. Participants in the TAP group first completed a VR practice session to become familiar with the think-aloud procedure while using the headset. During this practice session, the coverage indicator (Figure~\ref{fig:console}~\textcircled{\scriptsize 3}) was displayed to support familiarization with verbalizing their ongoing experiences, but it was not shown during the experimental sessions. Participants in the non-TAP (Control) group received a verbal briefing on the VR games and experimental procedure before proceeding to the experimental sessions.}
+
+
+\hsnote{Each participant then experienced the three VR games in the counterbalanced order. 
+Before each session, the researcher briefly explained the game controls and task. Each game was played for approximately 7--10 minutes. 
+During the TAP sessions, participants in the TAP group continuously verbalized their ongoing thoughts and experiences. 
+If a participant stopped verbalizing for an extended period, a brief synthesized voice prompt (``Please continue thinking aloud'') was presented as a reminder.
+After each game, participants completed the post-experience questionnaires, which took about 5--7 minutes and served as a rest.}
+
+
+
+% was visible only in this practice session and never during the experimental sessions. Control participants started directly with the first game. Each game was played for about 7--10 minutes, preceded by a short explanation of how to play; whenever a TAP participant stopped thinking aloud, the researcher triggered a short synthesized voice prompt (``Please continue thinking aloud''). 
+% After each game, participants completed the questionnaires, which took 3--5 minutes and served as a \note{10-minute} break before the next game.
+
+\subsection{Participants}
+\label{subsec:participants}
+
+% Thirty-two participants (16 female, 16 male; age $M=26.2$ years, $SD=3.1$, range 21--34; no participant chose ``prefer not to disclose'') were included in the analyses, 16 in the TAP group and 16 in the non-TAP (Control) group, each participating in three VR game sessions. 
+
+%\hsnote{Thirty-two participants (16 female, 16 male; age $M=26.2$ years, $SD=3.1$, range 21--34; no participant chose ``prefer not to disclose'') were included in the analyses. 
+%Following a between-subjects design, they were divided into two groups of 16: the TAP group and the non-TAP (Control) group. Each participant completed three VR game sessions.}
+%They were recruited through advertisements on university online communities and posters on campus and in nearby residential areas; by the stratification variable, half of each group fell in the high prior-VR-experience stratum, and six studied or worked in a VR-related field. 
+
+\hsnote{Thirty-two participants (16 female, 16 male; no participant selected ``prefer not to disclose''; age $M=26.2$ years, $SD=3.1$, range 21--34) were included in the analyses.
+Following the between-subjects design, participants were evenly assigned to the TAP and non-TAP (Control) groups, with 16 participants in each group.
+Within their respective groups, each participant completed three VR game sessions.}
+Participants were recruited through advertisements posted on university online communities, campus bulletin boards, and nearby residential areas.
+
+
+% Following a between-subjects design, they were divided into two groups of 16: the TAP group and the non-TAP (Control) group. 
+% In their respective groups, each participant completed three VR game sessions. 
+
+% \redout{; six studied or worked in a VR-related field.}
+% 이거는 밑에 참가자 균형 이야기할 때 포함되어야 함. 
+
+To maintain comparable participant characteristics across the two between-subjects groups, participants were assigned to balance motion-sickness susceptibility, prior VR experience, and gender between the TAP and non-TAP groups. Both groups included 8 female and 8 male participants.
+
+Prior VR experience was characterized using three indicators. First, 14 participants in the TAP group and 13 participants in the non-TAP group had prior VR experience, while 2 and 3 participants, respectively, had no prior experience. Among those with prior VR experience, 12 participants in the TAP group reported a cumulative VR usage time of 10 hours or less and 2 reported more than 10 hours; in the non-TAP group, 9 reported 10 hours or less, and 4 reported more than 10 hours. Regarding recency of VR use, the TAP group included 6 participants who had used VR within the past month, 5 within the past year, and 3 more than one year ago. The corresponding numbers in the non-TAP group were 6, 5, and 2 participants, respectively.
+Overall, these distributions indicate that prior VR experience was broadly comparable between the two groups.
+
+Motion-sickness susceptibility was scored from the screening survey's MSSQ items~\cite{golding1998mssq} and did not differ between groups (TAP $M=5.72$, $SD=4.05$; non-TAP $M=6.06$, $SD=4.30$; Welch's $t=-0.23$, $p=.82$) and age was also comparable across groups (TAP: $M=25.8$ years, $SD=2.8$; non-TAP: $M=26.6$ years, $SD=3.4$).
+
+
+% To maintain comparable participant characteristics across the two groups, assignment was stratified based on motion-sickness susceptibility (high/low) and prior VR experience (high/low). This $2 \times 2$ stratification produced four strata, each filled with four TAP and four non-TAP participants (4 strata $\times$ 4 $\times$ 2 groups $= 32$). Gender was not a stratification variable; assignment aimed at gender balance where the applicant pool allowed, yielding 8~F~/~8~M in each group. The two groups showed no significant difference in motion-sickness susceptibility ($M=5.72$ vs.\ $6.06$; $t=-0.227$, $p=.822$), and age was comparable across groups (TAP: $M=25.8$ years, $SD=2.8$; non-TAP: $M=26.6$ years, $SD=3.4$).
+
+This study was approved by the university's institutional review board (No.\ anonymized for review). 
+Participants consented to the recording of the experimental sessions, survey completion, and to the pseudonymized processing of their utterances by the automated scoring pipeline. Each participant received USD 14 for taking part; the whole experiment took about 70 minutes.
+
+% camera-ready: KUIRB-2026-0416-01
+
+
+
+%\hsnote{To maintain comparable participant characteristics across the two groups, assignment was stratified based on motion-sickness susceptibility and prior VR experience. Participants with higher and lower levels of each characteristic were distributed evenly between the TAP and non-TAP groups. The two groups showed no significant difference in motion-sickness susceptibility ($M=5.72$ vs.\ $6.06$; $t=-0.227$, $p=.822$).} \note{need other data}
+
+
+%This study was approved by the university's institutional review board (No. anonymized for review). 
+%Participants consented to the recording of the experimental sessions, survey completion, and to the pseudonymized processing of their utterances by the automated scoring pipeline.
+%Each participant received \$14 for the session. 
+%The entire experiment took about 70 minutes.
+
+
+
+% camera-ready: KUIRB-2026-0416-01

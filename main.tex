@@ -1,0 +1,175 @@
+% Single Column
+%%\documentclass[sigconf]{acmart}
+%%\usepackage{acmart-taps}
+\documentclass[manuscript,review,anonymous]{acmart}
+%%\documentclass[manuscript,screen,review]{acmart}
+%%\documentclass[sigconf,authordraft]{acmart}
+
+\usepackage{textgreek}
+\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{array}
+%\usepackage{booktabs}
+\usepackage{siunitx}
+%\usepackage{threeparttable}
+%\usepackage{tabularx}
+\usepackage{textcomp}
+
+
+
+\newcommand{\note}[1]{\textcolor{black}{#1}}
+
+\newcommand{\hsnote}[1]{\textcolor{black}{#1}}
+\newcommand{\vsnote}[1]{\textcolor{black}{#1}}
+
+
+\usepackage{multirow}
+\usepackage[sf]{subfigure}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{xcolor,colortbl}
+\usepackage{multicol} % preamble에 추가
+\usepackage{lscape} % preamble에 추가
+\usepackage{tabularx,longtable, makecell, array}
+\usepackage[normalem]{ulem}
+\usepackage{hyperref} % usepackage 마지막 줄에 추가
+
+\newcommand\redout{\bgroup\markoverwith
+{\textcolor{red}{\rule[0.5ex]{2pt}{0.8pt}}}\ULon}
+
+
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    Bib\TeX}}}
+
+\setcopyright{acmlicensed}
+\copyrightyear{2027}
+\acmYear{2027}
+\setcopyright{cc}
+\setcctype{by}
+\acmConference[CHI '27]{Proceedings of the 2027 CHI Conference on Human Factors in Computing Systems}{May 10--14, 2027}{Pittsburgh, PA, USA}
+%\acmBooktitle{Proceedings of the 2027 CHI Conference on Human Factors in Computing Systems}{May 10--14, 2027}{Pittsburgh, PA, USA}
+%\acmPrice{}
+\acmDOI{XXXXXXX.XXXXXXX}
+\acmISBN{XXX-X-XXXX-XXXX-X/2027/04}
+
+
+%% \acmSubmissionID{000-000-0000}
+\citestyle{acmnumeric}
+
+\sloppy
+
+\begin{document}
+
+\title[Speaking of Presence]{Speaking of Presence: Evidence-Gated LLM Analysis of Think-Aloud Reflects Within-Person Presence Differences Across VR Games}
+
+
+
+
+\author{Hanseob Kim}
+\orcid{0000-0002-3623-8171}
+\affiliation{
+  \institution{Konyang University}
+  \city{Daejeon}
+  \country{Republic of Korea}}
+\email{khseob0715@konyang.ac.kr}
+
+\author{Gerard Jounghyun Kim}
+\orcid{0000-0001-9880-8021}
+\affiliation{
+  \institution{Digital eXPerience Lab}\institution{Korea University}
+  \city{Seoul}
+  \country{Republic of Korea}}
+\email{gjkim@korea.ac.kr}
+
+\renewcommand{\shortauthors}{xx et al.}
+
+\input{Sections/00_abstract}
+
+\begin{CCSXML}
+<ccs2012>
+ <concept>
+  <concept_id>10003120.10003121.10003124.10010866</concept_id>
+  <concept_desc>Human-centered computing~Virtual reality</concept_desc>
+  <concept_significance>500</concept_significance>
+ </concept>
+ <concept>
+  <concept_id>10003120.10003121.10003122.10003334</concept_id>
+  <concept_desc>Human-centered computing~User studies</concept_desc>
+  <concept_significance>300</concept_significance>
+ </concept>
+  <concept>
+  <concept_id>10003120.10003123.10010860.10010858</concept_id>
+  <concept_desc>Human-centered computing~Interaction paradigms</concept_desc>
+  <concept_significance>300</concept_significance>
+ </concept>
+ 
+ <concept>
+  <concept_id>10003120.10003121.10003129</concept_id>
+  <concept_desc>Human-centered computing~Interactive systems and tools</concept_desc>
+  <concept_significance>100</concept_significance>
+ </concept>
+ 
+ <concept>
+  <concept_id>10010405.10010469.10010474</concept_id>
+  <concept_desc>Applied computing~Media arts</concept_desc>
+  <concept_significance>100</concept_significance>
+ </concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Human-centered computing~Virtual reality}
+\ccsdesc[300]{Human-centered computing~User studies}
+\ccsdesc[300]{Human-centered computing~Interaction paradigms}
+\ccsdesc[100]{Human-centered computing~Interactive systems and tools}
+%\ccsdesc[100]{Applied computing~Media arts}
+
+\keywords{
+    Virtual Reality,
+    Presence,
+    Immersion,
+    Think-Aloud Protocol,
+    Large Language Models,
+    Automated Assessment,
+    Igroup Presence Questionnaire
+}
+
+
+
+\begin{teaserfigure}
+  \centering
+  \includegraphics[width=\textwidth]{Figures/Figure1.png}
+  \caption{System overview: from think-aloud utterances to a post-session IPQ report. A participant thinks aloud while playing a commercial VR title, and each utterance is transcribed and routed to one of the IPQ constructs by a locally fine-tuned small language model. A multi-agent scoring chain then turns the routed utterances into item, subscale, and total IPQ scores for that session. Scoring and reporting run after the session and not during play: the analysis interface replays the scored session against its recording, and the session report summarizes the resulting subscale and total scores.}
+  \Description{A four-part diagram. At the left, a person wearing a head-mounted display holds two controllers and speaks, with a speech bubble containing four example think-aloud utterances labeled as spatial presence, involvement, and experienced realism. In the middle, a block diagram of the analysis system runs from speech input through speech-to-text conversion to a locally fine-tuned language model that sorts utterances into the IPQ constructs, and then to IPQ subscale analysis. At the right, two post-session panels: an analysis viewer plotting subscale scores across session time, and a session report listing session information, subscale statistics, processing status, and an overall presence score.}
+  \label{fig:teaser}
+\end{teaserfigure}
+
+
+
+\maketitle
+
+\input{Sections/01_introduction}
+\input{Sections/02_relatedworks}
+\input{Sections/02b_system}
+\input{Sections/03_experiment}
+\input{Sections/04_result}
+\input{Sections/05_discussion}
+\input{Sections/05b_limitations}
+\input{Sections/06_conclusion}
+
+
+
+\begin{acks}
+This work was supported by 
+the MSIT of Korea/IITP-ITRC under Grant IITP-2022-RS-2022-00156354; and 
+National Research Foundation under Grant RS-2025-00514411.
+The authors used AI tools for grammatical checking and linguistic refinement of the text, and Gemini 3.1 Pro image generation to draft the illustration of Figure~\ref{fig:teaser} and the layout of the pipeline example figure, which the authors then finished and labeled in Adobe Illustrator; all data shown are the authors' own.
+\end{acks}
+
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+\input{Sections/07_appendix}
+
+\end{document}

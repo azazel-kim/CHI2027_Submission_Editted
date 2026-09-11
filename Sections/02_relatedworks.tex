@@ -1,0 +1,137 @@
+
+% during a task without interpretation or editorial comment, and concurrent TAP is a standard way to capture in-situ user cognition in usability evaluation~\cite{vandenhaaak2003concurrent}.
+% The long-standing concern is reactivity: verbalizing may alter the performance or the experience being studied.
+% Meta-analytic evidence indicates that plain verbalization does not alter task performance~\cite{fox2011concurrent}, but its effect on experiential qualities such as presence remains underexplored.
+
+% In VR the risk is amplified because presence is fragile and susceptible to ``breaks in presence''~\cite{slater2009place}; verbalizing may trigger metacognitive awareness that disrupts spatial presence and involvement.
+% RQ3 tests this directly by comparing IPQ scores with and without TAP.
+
+% TAP itself has already been carried into the headset.
+% Concurrent think-aloud has been used to evaluate a virtual twin of a physical product against the product itself~\cite{zhang2022thinkaloud, zhang2023thinkaloud} and to identify user-experience problems of VR games with older adults, who reported that verbalizing had little effect on their game experience~\cite{fan2022older}; a retrospective variant, in which participants narrate a recording of their own VR session, has been used to elicit decision-making~\cite{sergiou2024vrrta}.
+% In these studies the verbalizations are analyzed for usability problems or decision rationales, not scored for presence; to our knowledge, no study has used the think-aloud stream itself as the presence measure.
+
+% Two lines of work come closer.
+% A recent pilot showed that answering questionnaire items by voice inside the headset sustained immersion better than controller-based pop-ups~\cite{kim2026situ}, which suggests that the spoken channel is compatible with an ongoing VR experience.
+% Recent LLM-driven analyses of think-aloud speech during VR gameplay have used foundation models to estimate moment-to-moment player states from utterances and align them with post-experience judgments~\cite{murat2025llmthinkalouds}.
+% Whereas the former still asks the participant to answer items and the latter targets emotion-trajectory alignment across playthroughs, our study treats the think-aloud stream itself as the input and evaluates the alignment of speech-derived and self-reported IPQ scores within the same participant across VR games.
+
+
+% Scoring guidelines take the mean of all 14 items as the primary index and the subscales as complementary evidence; three items are reverse-scored (SP2, INV3, REAL1), while INV1 uses a reversed anchor by design and is not~\cite{tran2024ipq}.
+
+
+
+% An alternative to self-report is to derive presence indices from the participant's language.
+% Slater and Usoh first coded the predicates in post-session essays into visual, auditory, and kinesthetic representation systems and related them to reported presence~\cite{slater1993representation}; later work indexed perceived presence in computer-mediated communication from linguistic features~\cite{kramer2006linguistic}, and in social VR related LIWC pronoun and social-language categories in natural speech to self-reported spatial and social presence, indicating that language carries construct-relevant variance beyond the questionnaire itself~\cite{deveaux2024pronouns}.
+
+
+
+
+\section{RELATED WORKS}
+\label{sec:relatec}
+
+\subsection{Presence in VR and Its Measurement}
+
+\hsnote{Presence refers to the subjective sense of ``being there'' in a virtual environment despite knowing that the experience is mediated~\cite{slater2009place}.
+Immersion, in contrast, generally refers to the objective properties of a VR system that determine the extent and fidelity with which it can reproduce sensory information from the real world~\cite{slater1997framework, witmer1998measuring}.
+Higher levels of immersion, supported by these system properties, can facilitate a stronger sense of presence, although they do not necessarily guarantee it.} 
+
+
+\hsnote{Presence is typically measured using post-experience self-report questionnaires. Early approaches include Slater and colleagues' ``being there'' measures~\cite{slater1994depth,usoh2000reality} and Witmer and Singer's Presence Questionnaire (PQ)~\cite{witmer1998measuring}. The Igroup Presence Questionnaire (IPQ)~\cite{schubert2001experience} was later developed as a standardized measure of presence and assesses four dimensions: General Presence (GP), Spatial Presence (SP), Involvement (INV), and Experienced Realism (REAL).
+The IPQ has since become one of the most widely used instruments for assessing presence in VR~\cite{tran2024ipq,schwind2019presence}.}
+
+\hsnote{Beyond questionnaires, several studies have explored whether users' language can provide indicators of presence. Slater and Usoh coded linguistic representations in post-session descriptions and examined their relationship with reported presence~\cite{slater1993representation}. Later work investigated linguistic features associated with perceived presence in computer-mediated communication~\cite{kramer2006linguistic}, while recent social VR research has related patterns in natural speech to self-reported spatial and social presence~\cite{deveaux2024pronouns}. These findings suggest that users' language can contain information relevant to presence, although linguistic measures have generally been treated as complementary indicators rather than as direct quantitative measures comparable to established presence questionnaires.}
+
+
+
+When a new measure is compared against an established questionnaire, a non-significant difference is often read as evidence that the two agree; VR studies that compared questionnaires administered inside and outside the headset, for example, concluded that scores were ``comparable'' on the basis of non-significant tests alone~\cite{schwind2019presence,regal2019questionnaires}. Equivalence testing reverses the null hypothesis so that agreement must be demonstrated within a pre-declared margin~\cite{lakens2017equivalence,lakens2018tutorial}, and it has been used in VR research to show that simulated and real AR conditions~\cite{lee2012equivalence}, simple and complex scenes~\cite{sanaei2024scene}, and encoding modalities~\cite{johnsdorf2025memory} yield equivalent outcomes. All three set their own margins, since no consensus margin exists for presence questionnaires; a standard alternative from clinical measurement is to anchor the margin to the reference instrument's own standard error of measurement and smallest detectable change~\cite{bland1986statistical}. We adopt that approach in Section~\ref{subsec:rq1_convergence}, and we report agreement at the individual level separately, because equivalence of means does not establish that two measures are interchangeable for a single person~\cite{lin1989concordance}.
+
+
+
+
+\subsection{Think-Aloud Protocol in HCI and VR Research}
+
+\hsnote{The Think-Aloud Protocol (TAP), formalized by Ericsson and Simon~\cite{ericsson1993protocol}, asks participants to vocalize their ongoing thoughts while performing a task, and concurrent TAP has long been used to capture in-situ user cognition in usability evaluation~\cite{vandenhaaak2003concurrent}.
+Because verbal reports are produced during interaction, TAP can provide temporally situated information about users' thoughts, reactions, and problems as they occur, offering a complementary perspective to post-experience self-report measures.}
+
+
+\hsnote{These advantages have also motivated the use of TAP in VR research. Concurrent think-aloud has been used to evaluate a virtual twin of a physical product~\cite{zhang2022thinkaloud,zhang2023thinkaloud} and to identify user-experience problems in VR games~\cite{fan2022older}, while retrospective think-aloud has been used to elicit users' decision-making after VR experiences~\cite{sergiou2024vrrta}. Recent work has also begun to analyze think-aloud speech collected during VR gameplay to estimate moment-to-moment experiential states and relate them to post-experience judgments~\cite{murat2025llmthinkalouds}. These studies demonstrate that think-aloud verbalizations can contain rich information about users' ongoing VR experiences.}
+
+
+\hsnote{However, TAP primarily produces unstructured qualitative data, which makes it difficult to use directly as a standardized quantitative measure. To compare presence across users, conditions, or time, verbal reports must first be interpreted and mapped onto predefined constructs, and the resulting measurements can depend on how the utterances are coded. Existing VR studies have therefore typically used think-aloud data to identify usability problems, behavioral rationales, or experiential themes rather than to produce quantitative presence scores. This limitation motivates methods that can systematically transform think-aloud utterances into numerical measures corresponding to established presence constructs.}
+
+\note{A separate methodological concern is the potential reactivity of the think-aloud procedure itself. Concurrent verbalization requires users to continuously externalize their thoughts while interacting with the virtual environment, and the act of verbalizing may therefore influence the experience being observed. Although meta-analytic evidence suggests that simple verbalization does not necessarily impair task performance~\cite{fox2011concurrent}, its influence on subjective experiential qualities such as presence remains less clear. In immersive VR, continuously verbalizing thoughts may divide attention between the virtual content and the reporting task or increase users' awareness of the experimental situation. Such interference could potentially weaken the formation of presence while also increasing the cognitive demands of the experience.}
+
+\note{This issue is particularly important when TAP itself is used as a source for measuring presence: if the measurement procedure substantially alters presence, the resulting verbal reports may not represent the experience that would have occurred without concurrent verbalization. We thus include a non-TAP group that experiences the same VR content without thinking aloud, allowing us to examine whether the TAP procedure itself changes experienced presence and workload.}
+
+
+
+
+
+\subsection{LLM-Based Quantification of Think-Aloud Utterances}
+
+\hsnote{Recent advances in large language models (LLMs) provide a potential means of transforming unstructured verbal reports into structured quantitative measures. LLMs have demonstrated strong performance on text-annotation and classification tasks that require natural-language inputs to be mapped onto predefined conceptual categories~\cite{gilardi2023chatgpt,ziems2024can}. 
+They have also been applied to multidimensional assessment tasks in which textual evidence is evaluated according to multiple predefined criteria~\cite{harnessing2024writing}. These capabilities are particularly relevant to TAP, where each utterance can contain evidence related to different aspects of a user's experience.}
+
+\hsnote{LLM-based pipelines can further decompose this process into multiple stages. Multi-agent frameworks allow different components to perform complementary tasks, such as identifying relevant evidence, classifying it according to predefined constructs, and subsequently deriving a structured judgment~\cite{wu2023autogen}. Domain-specific classifiers can also be adapted using parameter-efficient fine-tuning methods such as LoRA~\cite{hu2022lora} and QLoRA~\cite{dettmers2023qlora}, allowing study-specific utterances to be incorporated into the classification process without requiring full model retraining. 
+These techniques provide a technical basis for systematically mapping open-ended think-aloud utterances onto predefined presence constructs.}
+
+\hsnote{Recent work has begun to use LLMs to analyze think-aloud speech collected during VR gameplay and estimate moment-to-moment experiential states from users' utterances~\cite{murat2025llmthinkalouds}. 
+However, such work has not established whether think-aloud utterances can be converted into quantitative presence measures corresponding to established presence instruments such as the IPQ. Our work addresses this gap by proposing an LLM-based system that quantifies think-aloud utterances into IPQ-based presence scores and evaluating how these scores correspond to conventional self-reported IPQ measurements and differences in presence across VR experiences.}
+
+
+\subsection{Hypotheses}
+Based on the literature review, we propose the following hypotheses:
+
+\begin{itemize}
+\item [\textbf{H1}] \hsnote{The proposed LLM-based system will reliably identify presence-related information from think-aloud utterances and map it onto the corresponding IPQ subscales, enabling qualitative verbal reports to be quantified as presence scores.}
+
+
+\item [\textbf{H2}] \hsnote{Within the TAP group, LLM-derived IPQ scores will positively correspond with participants' self-reported IPQ scores and capture their relative differences in presence across VR games.}
+
+\item [\textbf{H3}] \hsnote{Presence scores derived from moment-to-moment think-aloud utterances will retain stronger indications of presence than retrospective self-reported IPQ scores, as they are based on experiences verbalized as they occur rather than reconstructed after the experience.}
+
+
+\item [\textbf{H4}] \note{Compared with the non-TAP group, participants performing TAP will report lower presence and higher workload, reflecting the additional attentional demands introduced by concurrent verbalization.}
+
+\end{itemize}
+
+
+
+% \subsection{Automated Text Classification with Large Language Models}
+
+% Large language models perform strongly on zero- and few-shot text classification: GPT-based models have outperformed crowd workers on structured political text labeling~\cite{gilardi2023chatgpt}, and LLMs handle a range of computational social science tasks, from sentiment and stance detection to content categorization~\cite{ziems2024can}.
+% In multi-dimensional writing assessment, LLM scores reach acceptable reliability against human raters when the prompt decomposes the criteria into fine-grained facets~\cite{harnessing2024writing}, the strategy our item cards follow (Section~\ref{sec:system}).
+
+
+% \subsection{Multi-Agent LLM Pipelines for Structured Reasoning}
+
+% Multi-agent frameworks assign complementary subtasks to distinct LLM agents within a coordinated pipeline~\cite{wu2023autogen}.
+% For structured assessment this lets evidence extraction be separated from scoring, so that a second agent rates only what a first agent has extracted and every score stays traceable to quoted evidence.
+% Reliability of such pipelines has been framed in two ways: ensemble validation across multiple LLMs, with agreement computed both across models and against human coders~\cite{jain2025multillm}, and a psychometric template of reliability and validity for LLM-constructed rating scales~\cite{eberhardt2025llmscale}; we take up the human-coder comparison in Section~\ref{subsec:rq1_reliability} and convergent validity in Section~\ref{subsec:rq1_convergence}.
+
+
+% \subsection{Fine-Tuning Small Language Models for Domain-Specific Tasks}
+
+% Parameter-efficient fine-tuning such as LoRA~\cite{hu2022lora} and its quantized variant QLoRA~\cite{dettmers2023qlora} adapts a pretrained model by training only low-rank adapters on a frozen, 4-bit-quantized base, at a fraction of the memory of full fine-tuning and with competitive performance.
+% Two properties matter here.
+% An open-weight model can be fine-tuned on the study's own Korean think-aloud utterances, whereas the API models in the scoring chain are used as frozen, prompt-only services; and a small model runs on the experiment machine, so that raw speech stays local and classification incurs no API cost.
+% RQ2 evaluates such a model as the routing front end of the scoring pipeline.
+
+
+% \subsection{Hypotheses}
+% Based on the literature review, the following hypotheses are proposed:
+
+% \begin{itemize}
+%     \item [\textbf{H1}] LLM-derived IPQ scores from think-aloud utterances will positively correlate with the self-reported IPQ scores from the same VR sessions and will reflect within-person differences in presence across the three VR games.
+%     % Speech-derived IPQ totals will correlate positively with the self-reported IPQ total of the same session on participants held out from pipeline selection (primary), and will track each participant's ordering of the three VR games better than chance (secondary).
+%     \item [\textbf{H2}] 
+%     The proposed LLM-based system will successfully map think-aloud utterances onto the IPQ dimensions and retain sufficient relevant utterances through the classification and scoring stages to produce quantitative presence measures.
+    
+%     % The locally fine-tuned routing classifier will supply at least one candidate utterance for every IPQ item in a session, and the utterances it selects will reach the scoring stage rather than being lost at routing or at the evidence gate.
+%     \item [\textbf{H3}] Self-reported IPQ scores will not differ significantly between the TAP and non-TAP groups, indicating that concurrent verbalization does not substantially alter reported presence.
+    
+%     % The Think-Aloud and control groups will not differ significantly in reported IPQ scores, consistent with concurrent verbalization not measurably degrading presence.
+% \end{itemize}
+
+
+

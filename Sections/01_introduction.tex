@@ -1,0 +1,82 @@
+% Evaluating a virtual reality (VR) system routinely means comparing experiences on how present they make a player feel~\cite{cummings2016immersive}, and because presence scores show substantial individual variability~\cite{usoh2000reality,schwind2019presence}, the comparison of practical interest may be limited to within-person: which of several titles/contents a particular player felt more presence.
+
+
+% Presence, the subjective sense of ``being there'' in a virtual environment~\cite{slater2009place}, is measured for this purpose with self-report questionnaires such as the Igroup Presence Questionnaire (IPQ)~\cite{schubert2001experience}, administered after the play session ends or is paused.
+% Each session therefore yields one retrospective judgment, subject to recall bias, and the session that produced it leaves no other measured record.
+
+\section{Introduction}
+
+
+\hsnote{Evaluating a virtual reality (VR) system routinely involves comparing experiences in terms of how strongly they make users feel present~\cite{cummings2016immersive}. Because presence ratings can vary substantially across individuals~\cite{usoh2000reality,schwind2019presence}, comparisons of practical interest may often focus on within-person differences, such as whether the same user experiences a stronger sense of presence under one VR design method or condition than another.}
+\hsnote{Presence, the subjective sense of ``being there'' in a virtual environment~\cite{slater2009place}, is commonly measured using self-report/subjective questionnaires such as the Igroup Presence Questionnaire (IPQ)~\cite{schubert2001experience}, Presence Questionnaire (PQ)~\cite{witmer1998measuring}, ITC-Sense of Presence Inventory (ITC-SOPI)~\cite{lessiter2001cross}, and Temple Presence Inventory (TPI)~\cite{lombard2009measuring}. 
+These questionnaires are typically administered after a play session ends or is paused, requiring participants to retrospectively summarize their experience. As a result, the reported score may be influenced by recall and captures little about how presence changed over time. Different VR conditions may therefore yield similar retrospective presence scores despite substantial differences in their moment-to-moment presence.} 
+
+\hsnote{Among methods for studying user experience, the Think-Aloud Protocol (TAP)~\cite{ericsson1993protocol} provides a way to capture users' thoughts and reactions while they are interacting with a system. By asking users to verbalize what comes to mind during a task, TAP provides temporally situated accounts that can be linked to particular actions or events as they occur. Compared with post-experience questionnaires, this can provide richer insight into how an experience develops over time while reducing reliance on retrospective recall~\cite{boren2000thinking,fan2019concurrent}.}
+
+
+\hsnote{These advantages have also motivated the use of TAP in VR studies, where concurrent verbalizations can capture how users' experiences change throughout an immersive session~\cite{zhang2022using, fan2022older}. 
+For presence measurement, however, collecting such utterances is only part of the problem. 
+TAP produces unstructured, qualitative data, and translating these verbal reports into quantitative presence measures requires interpreting and coding what each utterance indicates about the user's experience. 
+Conventional human coding can be labor-intensive and may depend on how individual coders interpret the same utterance, making consistent quantitative comparison across users, conditions, and time points challenging.}
+
+
+\note{At the same time, the act of thinking aloud may itself influence the VR experience being measured. Although the direction of this effect is not necessarily known, continuously verbalizing one's thoughts may divert attention from the virtual content or increase awareness of the ongoing evaluation, potentially altering the formation of presence~\cite{fox2011concurrent}. If this influence is substantial, it may limit the suitability of TAP as a concurrent method for measuring presence in VR.}
+
+
+\hsnote{Recent advances in large language models (LLMs) offer a potential way to bridge this gap. LLMs have demonstrated strong performance on structured text-labeling tasks~\cite{gilardi2023chatgpt} and can support pipelines that identify relevant evidence in natural-language data and derive structured judgments from it~\cite{wu2023autogen}. These capabilities make it possible to transform moment-to-moment TAP utterances into quantitative estimates of presence, combining the temporal richness of concurrent verbal reports with measures that can be compared numerically across users, conditions, and time.}
+
+
+
+\hsnote{This paper presents an LLM-based system that converts think-aloud utterances into quantitative presence scores aligned with the four IPQ dimensions: \textit{General Presence, Spatial Presence, Involvement, and Experienced Realism}. To evaluate this approach, we conducted a between-subjects study with 32 participants, equally assigned to TAP and non-TAP groups. All participants experienced three VR games and completed the IPQ after each experience, while participants in the TAP group additionally verbalized their ongoing experiences during gameplay\footnote{\note{Because concurrent verbalization may itself influence experienced presence, the non-TAP group provided a reference for presence measured without TAP. This design also allowed us to compare LLM-derived presence scores from think-aloud utterances with self-reported IPQ scores obtained without concurrent verbalization.}}.}
+
+For the TAP group, we compared the LLM-derived IPQ scores with participants' corresponding self-reported IPQ scores and examined whether the system captured within-person differences in presence across the three VR games. 
+We further evaluated how accurately the routing classifier mapped individual utterances to the IPQ dimensions and how much of the collected speech contributed to presence scoring. \note{We also compared presence and workload between the TAP and non-TAP groups, as measured by the IPQ and NASA-TLX, respectively, to examine whether performing the think-aloud procedure itself influenced the VR experience and, if so, in what direction.} 
+
+Overall, these analyses address the following research questions:
+
+
+\begin{itemize}
+
+%  tap group 내에서 얼마나 reflect 되었는지? 
+\item [\textbf{RQ1:}] \hsnote{To what extent do think-aloud–derived presence scores reflect self-reported IPQ scores within the TAP group? (\textit{TAP-derived vs. self-reported IPQ within the TAP group})}
+
+% tap 과 non tap group 의 결과가 얼마나 일관되거나 다른지? 
+\item [\textbf{RQ2:}] \hsnote{How consistent are think-aloud–derived presence scores from the TAP group with self-reported IPQ scores from the non-TAP group, and do they show systematic differences? (\textit{TAP group vs. non-TAP group})}
+
+\item [\textbf{RQ3:}]  \note{To what extent does performing the Think-Aloud Protocol itself alter experienced presence, and does this effect limit its suitability as a concurrent method for measuring presence in VR?}
+
+
+\end{itemize}
+
+% 정량화 할 수 있는지? 
+% \item [\textbf{RQ1:}] \hsnote{Can the proposed LLM-based system quantify think-aloud utterances into presence measures corresponding to the IPQ and its subscales?}
+
+
+
+
+% \begin{itemize}
+%     \item [\textbf{RQ1:}] To what extent can a commercial multi-agent LLM pipeline (a two-stage utterance classifier, i.e., a front-end routing classifier followed by a large-API reviewer, and an evidence-gated IPQ subscale scorer) reflect the self-reported IPQ scores of the same session, and does it follow within-person differences across VR games?
+
+    
+%     \item [\textbf{RQ2:}] How accurately does the locally fine-tuned routing classifier sort each utterance into one of five\note{?} IPQ categories (GP, SP, INV, REAL, NONE), and what fraction of the classified utterances reaches the final scoring stage of the pipeline? 
+%     % RQ1 evaluates score accuracy while RQ2 evaluates classification and reach, so the two research questions are not compared on the same axis.
+%     \item [\textbf{RQ3:}] Does applying the Think-Aloud Protocol during a VR experience significantly affect participants' self-reported presence, as measured by the IPQ?
+% \end{itemize}
+
+% This paper makes three contributions as follows.
+% \begin{itemize}
+% \item We show that speech-derived IPQ scores, produced by an evidence-gated multi-agent LLM pipeline from concurrent think-aloud utterances, converge closely with self-reported presence on participants held out from pipeline selection
+% %($r=.61$, $n=9$, $27$ sessions) 
+% and reflect within-person differences across VR games.
+% %: the pipeline picks the participant's own highest-presence game in 69\% of cases and matches the direction of a game pair in 76\%, both above chance.
+% \item We develop an end-to-end system, a locally fine-tuned front-end routing classifier followed by an evidence-gated multi-agent scorer, and quantify its empirical performance, and we evaluate its strengths and limitations.
+% %document its principal limitation: involvement items rarely surface in speech and therefore fail to converge with the survey even when the total score does. Component ablations and a record of the scoring-stage alternatives that failed to close this gap place its source in the speech, not in the scorer.
+% \item We provide a preliminary within-study comparison of a TAP group and a control group on the same VR content, and find that the TAP group did not report significantly lower presence after Holm--Bonferroni correction, consistent with the interpretation that concurrent verbalization did not measurably degrade presence or disrupt the overall experience for the tested contents.
+% \end {itemize}
+
+The rest of the paper is organized as follows:
+Section~\ref{sec:relatec} presents the literature review and formulates various hypotheses.
+Section~\ref{sec:system} \hsnote{describes the proposed LLM-based system for quantifying think-aloud utterances into IPQ-based presence scores.}
+Section~\ref{sec:exp} provides the experimental design and procedure.
+Section~\ref{sec:result} presents the results, followed by the discussion and implications in Section~\ref{sec:discussion} and the limitations in Section~\ref{sec:limitations}.
+Finally, Section~\ref{sec:conclusion} concludes the paper.

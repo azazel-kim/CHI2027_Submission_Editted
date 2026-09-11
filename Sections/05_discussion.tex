@@ -1,0 +1,37 @@
+\section{DISCUSSION}
+\label{sec:discussion}
+
+\subsection{RQ1: What Speech-Derived Scores Capture Within the TAP Group}
+
+Speech recovered the direction of presence but not its level. On participants never used to tune the pipeline, the speech-derived IPQ total tracked the self-reported total (Section~\ref{subsec:rq1_convergence}), and within each participant it usually identified which game had felt more present (Section~\ref{subsec:rq1_within}), supporting H2. It did not reproduce the survey's level: speech totals ran about a quarter of a point lower. That gap is real but smaller than the questionnaire's own measurement error, so at the group level the two totals are equivalent.
+
+Why lower, when H3 predicted higher? We postulate that the offset comes from how the pipeline handles absence. Almost all of it sits in Involvement (Section~\ref{subsec:rq1_convergence}): two INV items ask whether the player was \emph{unaware} of the real world, and such absence rarely appears in speech as a statement. The evidence gate admits an item only when speech supports it, so these items stay unscored while the survey still rates them. Human coders did find INV evidence in most compared sessions (Section~\ref{subsec:rq1_reliability}), which shows the gap is a scoring rule, not silence. Consistent with this, calibrating INV removed most of the level offset without changing any direction indicator. Moment-to-moment speech therefore reports what is present; the retrospective survey also rates what was absent.
+
+Three limits apply. The five cases in which the pipeline missed a participant's top game all involved the same pair of titles, so the errors are content-specific rather than random. Equivalence holds for group means, not individuals, and its margin was set after seeing the data. And the offset returned on the held-out participants after calibration had removed it on the development set: calibration transfers rank and variation, not absolute level.
+
+\textbf{Within a participant, the speech-derived score says which session felt more present; it does not yet say how present in absolute terms.}
+
+\subsection{RQ2: Speech Scores of the TAP Group Against the Non-TAP Survey}
+
+\note{Pending: comparison of TAP speech-derived scores with non-TAP self-reported scores (analysis in progress).}
+
+\subsection{RQ3: Did Thinking Aloud Itself Change Presence?}
+
+H4 predicted lower presence and higher workload for the TAP group; we observed neither. The TAP group reported presence at least as high as the non-TAP group on every IPQ measure (Table~\ref{tab:group}), and no workload item differed between groups (Table~\ref{tab:workload}). After Holm correction across the five measures, no difference remained significant. We read this as a preliminary null against reactivity: in this sample, concurrent verbalization did not measurably degrade presence.
+
+Why might the direction have reversed? With these data we cannot separate a presence effect from a general tendency of the TAP group to answer more intensely, since it scored higher on workload too. The pattern was also not uniform: it appeared for two games and was absent for The Lab, and the confidence interval on the total barely excludes zero. One further observation needs a larger study: the spatial-presence items were far less internally consistent in the TAP group than in the non-TAP group while the means matched (Section~\ref{subsec:sample}). If it replicates, verbalizing may perturb self-report not by shifting the mean but by loosening the coherence of the answers.
+
+\textbf{Thinking aloud did not cost presence: it added no measurable workload, and the TAP group reported presence at least as high as the group that played without the instruction.}
+
+\subsection{What the System Contributed (H1)}
+
+The local front end sorted utterances into the four IPQ constructs well enough to feed the scoring chain: nearly every item slot received candidate evidence and nearly every scored item passed the evidence gate, with the losses at the scoring stage rather than at routing (Section~\ref{subsec:rq2}). Its INV recall was mid-range, so the INV gap above is not a routing failure. H1 is supported in the sense that speech can be quantified onto IPQ subscales, with the coverage limits documented above.
+
+\textbf{The on-device front end is not the bottleneck; the evidence gate is where coverage is decided.}
+
+\subsection{Implications for VR Evaluation Practice}
+
+Speech-derived scoring can complement the post-session survey when the question is a within-person comparison across content and no questionnaire can be given between sessions. It should not yet be used as an absolute presence score against an external reference. And a session's score is a statement about the items the player's speech supported: an uncovered item should stay missing rather than be imputed as zero.
+
+\paragraph{Cost.}
+Hand-coding the 3{,}595 TAP utterances against 14 items would take 60--180\,s per utterance, a bracket derived from timed deductive coding~\cite{chew2023llm}; with two coders and 10\% adjudication, as verbal-protocol analysis conventionally requires~\cite{chi1997quantifying}, that is roughly 132--396 person-hours before transcription. The pipeline's recorded API cost for scoring was USD 0.98--2.22 per session, about USD 50--110 for all 48 sessions. These are operating costs only; development iterations are excluded, and the quality of manual coding was not measured. Every intermediate judgment is logged, which makes the automated path auditable in a way manual coding notes rarely are.
